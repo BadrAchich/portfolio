@@ -3,6 +3,7 @@ export interface BadgeProps {
   name: string;
   image: string;
   url?: string;
+  skills?: string[];
 }
 
 export interface Props {
@@ -12,12 +13,12 @@ export interface Props {
 }
 
 const { items, direction = "left", speed = "normal" } = Astro.props;
-const duration = speed === "fast" ? "15s" : speed === "slow" ? "35s" : "25s";
+const duration = speed === "fast" ? "30s" : speed === "slow" ? "60s" : "45s";
 ---
 
 <div class="scroller my-8">
   <ul
-    class="scroller-inner m-0 list-none flex gap-6 p-0 items-center"
+    class="scroller-inner m-0 list-none flex gap-6 p-0 py-4 items-center"
     data-direction={direction}
     style={`--animation-duration: ${duration};`}
   >
@@ -28,15 +29,33 @@ const duration = speed === "fast" ? "15s" : speed === "slow" ? "35s" : "25s";
             href={badge.url || "#"} 
             target={badge.url ? "_blank" : "_self"} 
             rel="noopener noreferrer"
-            class="block w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden bg-white/5 border-2 border-transparent transition-all hover:border-primary hover:scale-105 hover:shadow-[0_0_15px_rgba(var(--color-primary),0.3)]"
+            class="group relative flex flex-col items-center justify-center w-64 h-72 bg-white/5 border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:border-primary hover:shadow-[0_0_20px_rgba(var(--color-primary),0.2)] overflow-hidden cursor-pointer no-underline"
             title={badge.name}
           >
-            <img 
-              src={badge.image} 
-              alt={badge.name} 
-              class="w-full h-full object-cover" 
-              loading="lazy"
-            />
+            <!-- Card Content (Hidden on hover) -->
+            <div class="flex flex-col items-center justify-center transition-opacity duration-300 group-hover:opacity-0 w-full h-full">
+              <img 
+                src={badge.image} 
+                alt={badge.name} 
+                class="w-32 h-32 object-contain mb-6 drop-shadow-lg" 
+                loading="lazy"
+              />
+              <h4 class="text-white text-center font-medium text-sm leading-snug">{badge.name}</h4>
+            </div>
+
+            <!-- Hover Overlay (Skills) -->
+            {badge.skills && badge.skills.length > 0 && (
+              <div class="absolute inset-0 bg-black/90 p-5 flex flex-col opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h5 class="text-primary font-semibold mb-3 text-sm text-center uppercase tracking-wider">Skills Acquired</h5>
+                <div class="flex flex-wrap gap-2 justify-center overflow-y-auto custom-scrollbar pr-1 content-start">
+                  {badge.skills.map(skill => (
+                    <span class="text-[11px] bg-white/10 px-2 py-1 rounded-md text-white/90 text-center leading-tight border border-white/5">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
           </a>
         </li>
       ))
@@ -47,21 +66,8 @@ const duration = speed === "fast" ? "15s" : speed === "slow" ? "35s" : "25s";
 <style>
   .scroller {
     overflow: hidden;
-    /* Soft fade effect on the left and right edges */
-    -webkit-mask: linear-gradient(
-      90deg,
-      transparent,
-      white 15%,
-      white 85%,
-      transparent
-    );
-    mask: linear-gradient(
-      90deg,
-      transparent,
-      white 15%,
-      white 85%,
-      transparent
-    );
+    -webkit-mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+    mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
   }
 
   .scroller-inner {
@@ -82,5 +88,18 @@ const duration = speed === "fast" ? "15s" : speed === "slow" ? "35s" : "25s";
     to {
       transform: translate(calc(-33.333333% - 0.5rem));
     }
+  }
+
+  /* Custom scrollbar for skills overlay */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
   }
 </style>

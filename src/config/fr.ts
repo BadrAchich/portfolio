@@ -19,7 +19,7 @@ export const SITE_CONFIG: SiteConfig = {
     { text: "LinkedIn", href: "https://linkedin.com/in/badr-achich" },
     { text: "Github", href: "https://github.com/BadrAchich" },
   ],
-  socialImage: "/zen-og.png",
+  socialImage: "/bxdr-og.jpg",
   canonicalURL: "https://portfolio-badr-achich.vercel.app",
 };
 

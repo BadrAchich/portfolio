@@ -27,7 +27,7 @@ export const SITE_CONTENT: SiteContent = {
     specialty: "Ingénieur Réseau et Cybersécurité",
     summary:
       "Junior passionné et curieux, j'apprends vite et m'adapte facilement. Je recherche une équipe expérimentée et soudée pour développer mon expertise en sécurité des réseaux tout en m'investissant dans des missions concrètes.",
-    email: "", // Non divulgué
+    email: "",
   },
   experience: [
     {
@@ -36,10 +36,17 @@ export const SITE_CONTENT: SiteContent = {
       startDate: "Févr. 2025",
       endDate: "Mars 2026",
       summary: [
-        "Intégration & Déploiement : Mise en place et configuration d'infrastructures réseaux et sécurité (Firewalls Fortinet, Check Point).",
-        "Support & Maintenance : Gestion des incidents (L1/L2), troubleshooting réseau et maintien en conditions opérationnelles des équipements.",
+        "Support & Maintenance : Gestion des incidents (L1/L2), troubleshooting réseau et maintien en conditions opérationnelles des équipements de sécurité.",
         "Administration Système : Gestion de base des environnements serveurs (Windows/Linux), des hyperviseurs et des services cloud (Microsoft Azure).",
-        "Network Automation : Conception et développement de A à Z d'une application dédiée à l'automatisation des tâches de maintenance pour les environnements Fortinet et Check Point.",
+      ],
+    },
+    {
+      company: "Secteur Horeca & Logistique",
+      position: "Responsable d'accueil, Chef de bar & Ouvrier polyvalent",
+      startDate: "2018",
+      endDate: "2025",
+      summary: [
+        "Diverses expériences (CHBA, Brasserie de Laveleye, Colona...) développant une forte capacité d'adaptation, le sens des responsabilités, le travail en équipe et la gestion du stress en environnement exigeant.",
       ],
     },
     {
@@ -53,9 +60,9 @@ export const SITE_CONTENT: SiteContent = {
   ],
   projects: [
     {
-      name: "Automatisation Fortinet / Check Point",
+      name: "Automatisation Fortinet & Check Point",
       summary:
-        "Application Python développée de A à Z pour automatiser la maintenance et le diagnostic d'environnements Fortinet et Check Point. Réduit jusqu'à 1 journée de travail manuel en un processus automatisé.",
+        "Conception et développement de A à Z d'une application Python dédiée à l'automatisation des tâches de maintenance. Permet de réduire jusqu'à 1 journée de travail manuel en un processus automatisé.",
       linkPreview: "/",
       linkSource: "https://github.com/BadrAchich",
       image: "/spotifu.png",
@@ -63,15 +70,15 @@ export const SITE_CONTENT: SiteContent = {
     {
       name: "Migration Stormshield → FortiGate",
       summary:
-        "Projet de migration d'un cluster Stormshield vers FortiGate avec configuration complète des règles firewall, politiques de sécurité, routage et VPN en environnement de production.",
+        "Projet d'intégration et déploiement : migration complète d'un cluster Stormshield vers FortiGate incluant la configuration des règles firewall, du routage et des tunnels VPN.",
       linkPreview: "/",
       linkSource: "https://github.com/BadrAchich",
       image: "/shopify-clon.png",
     },
     {
-      name: "Scripts d'automatisation réseau",
+      name: "Scripts & Network Automation",
       summary:
-        "Collection de scripts Python, Bash et PowerShell pour automatiser des tâches d'administration réseau : supervision, configuration, reporting et diagnostics sur infrastructures Cisco, Fortinet et Linux.",
+        "Création de scripts d'automatisation (Python, PowerShell, Bash) pour la gestion et le monitoring d'infrastructures. Une approche orientée solution pour optimiser le temps et réduire les erreurs humaines.",
       linkPreview: "/",
       linkSource: "https://github.com/BadrAchich",
       image: "/clone-ig.png",
@@ -79,11 +86,25 @@ export const SITE_CONTENT: SiteContent = {
   ],
   about: {
     description: `
-      Bonjour, je suis Badr Achich, Ingénieur Réseaux & Cybersécurité basé à Waremme, en Belgique. Passionné par les technologies réseau et la sécurité informatique, j'aime transformer des problèmes complexes en solutions simples, efficaces et durables.
+      Passionné par l'informatique depuis toujours, j'ai récemment validé mon Bachelier avec distinction. Mon profil technique est complété par plusieurs années d'expérience dans l'Horeca, m'ayant forgé un excellent relationnel et une grande rigueur.
 
-      Je maîtrise un large écosystème technologique : Fortinet (NSE 4 & NSE 6), Check Point, Stormshield, Cisco (CCNA), ainsi que Linux, Windows, Proxmox, Python, PowerShell et Azure. Mon approche est orientée automatisation : je cherche toujours à éliminer les tâches répétitives pour me concentrer sur ce qui a de la valeur.
+      **🛠️ Compétences Informatiques :**
+      • Réseaux & Télécommunications
+      • Cybersécurité (Fortinet, Check Point, Cisco, Stormshield)
+      • Virtualisation (Proxmox)
+      • Scripting et programmation (Python, PowerShell, Bash)
 
-      Certifié Fortinet NSE 4, NSE 6, Cisco CCNA et Cato CCA, je continue activement ma montée en compétences avec une veille technologique régulière et de nouveaux projets personnels.
+      **📜 Certifications :**
+      • Cisco CCNA
+      • Fortinet NSE4 (FortiOS 7.6) & NSE6 (FortiManager)
+      • Cato CCA
+
+      **🌍 Langues :**
+      • Français (C2 - Maternelle)
+      • Anglais (B2 - Professionnel)
+      • Italien (B1)
+
+      *Des références professionnelles (Shinka IT) sont disponibles sur demande.*
     `,
     image: "/badr-big.jpg",
   },

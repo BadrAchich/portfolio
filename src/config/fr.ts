@@ -63,28 +63,34 @@ export const SITE_CONTENT: SiteContent = {
   ],
   projects: [
     {
-      name: "Automatisation Fortinet & Check Point",
+      name: "Migration & HA Fortinet",
       summary:
-        "Conception et développement de A à Z d'une application Python dédiée à l'automatisation des tâches de maintenance. Permet de réduire jusqu'à 1 journée de travail manuel en un processus automatisé.",
-      linkPreview: "/",
-      linkSource: "https://github.com/BadrAchich",
-      image: "/proj-auto.jpg",
-    },
-    {
-      name: "Migration Stormshield → FortiGate",
-      summary:
-        "Projet d'intégration et déploiement : migration complète d'un cluster Stormshield vers FortiGate incluant la configuration des règles firewall, du routage et des tunnels VPN.",
-      linkPreview: "/",
-      linkSource: "https://github.com/BadrAchich",
+        "Remplacement d'une infrastructure pare-feu Stormshield par un cluster FortiGate. Intégration avancée avec un cœur de réseau HP via l'agrégation de liens (LACP) pour assurer la redondance matérielle et optimiser la bande passante.",
       image: "/proj-migr.jpg",
     },
     {
-      name: "Scripts & Network Automation",
+      name: "Audit & Conformité Réseau",
       summary:
-        "Création de scripts d'automatisation (Python, PowerShell, Bash) pour la gestion et le monitoring d'infrastructures. Une approche orientée solution pour optimiser le temps et réduire les erreurs humaines.",
-      linkPreview: "/",
-      linkSource: "https://github.com/BadrAchich",
+        "Développement de matrices de consolidation (tableurs/scripts) pour la vérification croisée des VLAN, des interfaces SVI et des règles de pare-feu par rapport au standard de référence A07 sur de multiples sites opérationnels.",
+      image: "/proj-auto.jpg",
+    },
+    {
+      name: "Moteur d'Échecs en Python",
+      summary:
+        "Conception d'un jeu d'échecs interactif jouable en terminal. Programmation de la représentation matricielle de l'échiquier et de la logique mathématique de déplacement des pièces pour explorer les concepts algorithmiques.",
+      image: "/proj-chess.jpg",
+    },
+    {
+      name: "Infra Proxmox & Conteneurs",
+      summary:
+        "Conception et gestion d'un serveur domestique. Déploiement de VM et conteneurs (LXC, Docker via Portainer) pour l'auto-hébergement et la gestion d'un panel de services (Nginx Proxy Manager, AdGuard, Audiobookshelf...).",
       image: "/proj-scripts.jpg",
+    },
+    {
+      name: "Sécurisation Accès Distants",
+      summary:
+        "Mise en place d'un réseau privé moderne via le routage de sous-réseaux Tailscale, couplé à une résolution DNS dynamique (DuckDNS) pour maintenir l'accès externe à l'infrastructure de manière ultra-sécurisée.",
+      image: "/proj-homelab.jpg",
     },
   ],
   about: {

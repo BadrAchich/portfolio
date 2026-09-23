@@ -63,28 +63,34 @@ export const SITE_CONTENT: SiteContent = {
   ],
   projects: [
     {
-      name: "Fortinet & Check Point Automation",
+      name: "Fortinet Migration & HA",
       summary:
-        "End-to-end design and development of a Python application dedicated to automating maintenance tasks. Reduces up to 1 day of manual work into a fully automated process.",
-      linkPreview: "/",
-      linkSource: "https://github.com/BadrAchich",
-      image: "/proj-auto.jpg",
-    },
-    {
-      name: "Stormshield → FortiGate Migration",
-      summary:
-        "Integration and deployment project: full migration of a Stormshield cluster to FortiGate, including firewall rules configuration, routing, and VPN tunnels.",
-      linkPreview: "/",
-      linkSource: "https://github.com/BadrAchich",
+        "Replacement of a Stormshield firewall infrastructure with a FortiGate cluster. Advanced integration with an HP core network via link aggregation (LACP) to ensure hardware redundancy and optimize bandwidth.",
       image: "/proj-migr.jpg",
     },
     {
-      name: "Scripts & Network Automation",
+      name: "Network Audit & Compliance Tool",
       summary:
-        "Creation of automation scripts (Python, PowerShell, Bash) for infrastructure management and monitoring. A solution-oriented approach to optimize time and reduce human error.",
-      linkPreview: "/",
-      linkSource: "https://github.com/BadrAchich",
+        "Development of consolidation matrices (spreadsheets/scripts) for the cross-verification of VLANs, SVI interfaces, and firewall rules against the A07 reference standard across multiple operational sites.",
+      image: "/proj-auto.jpg",
+    },
+    {
+      name: "Python Chess Engine",
+      summary:
+        "Design of an interactive terminal-based chess game to explore algorithmic concepts. Programming of the board's matrix representation and the mathematical logic of piece movements.",
+      image: "/proj-chess.jpg",
+    },
+    {
+      name: "Proxmox & Containers Infra",
+      summary:
+        "Complete design and management of a home server. Deployment of VMs and containers (LXC, Docker via Portainer) for self-hosting a variety of network and media services (Nginx Proxy Manager, AdGuard, Audiobookshelf...).",
       image: "/proj-scripts.jpg",
+    },
+    {
+      name: "Secure Remote Access",
+      summary:
+        "Implementation of a modern private network via Tailscale subnet routing, coupled with dynamic DNS resolution (DuckDNS) to maintain highly secure external access to the infrastructure.",
+      image: "/proj-homelab.jpg",
     },
   ],
   about: {

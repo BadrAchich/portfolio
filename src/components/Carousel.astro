@@ -1,0 +1,69 @@
+---
+export interface Props {
+  items: string[];
+  direction?: "left" | "right";
+  speed?: "fast" | "slow" | "normal";
+}
+
+const { items, direction = "left", speed = "normal" } = Astro.props;
+
+const duration = speed === "fast" ? "15s" : speed === "slow" ? "35s" : "25s";
+---
+
+<div class="scroller my-8">
+  <ul
+    class="scroller-inner m-0 list-none flex gap-4 p-0"
+    data-direction={direction}
+    style={`--animation-duration: ${duration};`}
+  >
+    {
+      [...items, ...items, ...items].map((item) => (
+        <li class="whitespace-nowrap rounded-xl border border-neutral/20 bg-neutral/10 px-6 py-3 text-sm font-medium text-white shadow-sm backdrop-blur-sm transition-all hover:border-primary/60 hover:text-primary">
+          {item}
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<style>
+  .scroller {
+    overflow: hidden;
+    /* Soft fade effect on the left and right edges */
+    -webkit-mask: linear-gradient(
+      90deg,
+      transparent,
+      white 15%,
+      white 85%,
+      transparent
+    );
+    mask: linear-gradient(
+      90deg,
+      transparent,
+      white 15%,
+      white 85%,
+      transparent
+    );
+  }
+
+  .scroller-inner {
+    width: max-content;
+    flex-wrap: nowrap;
+    animation: scroll var(--animation-duration) linear infinite;
+  }
+
+  .scroller-inner[data-direction="right"] {
+    animation-direction: reverse;
+  }
+
+  .scroller-inner:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes scroll {
+    to {
+      /* Translate exactly 1/3 of the width since we duplicated the array 3 times */
+      transform: translate(calc(-33.333333% - 0.333333rem));
+    }
+  }
+</style>

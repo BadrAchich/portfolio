@@ -88,25 +88,13 @@ export const SITE_CONTENT: SiteContent = {
     description: `
       Always passionate about IT, I recently graduated with honors with my Bachelor's degree. My technical profile is complemented by several years of experience in the hospitality industry, which gave me excellent interpersonal skills and great rigor.
 
-      **🛠️ Technical Skills:**
-      • Networks & Telecommunications
-      • Cybersecurity (Fortinet, Check Point, Cisco, Stormshield)
-      • Virtualization (Proxmox)
-      • Scripting & Programming (Python, PowerShell, Bash)
-
-      **📜 Certifications:**
-      • Cisco CCNA
-      • Fortinet NSE4 (FortiOS 7.6) & NSE6 (FortiManager)
-      • Cato CCA
-
-      **🌍 Languages:**
-      • French (C2 - Native)
-      • English (B2 - Professional)
-      • Italian (B1)
+      **🌍 Languages:** French (C2 - Native) • English (B2 - Professional) • Italian (B1)
 
       *Professional references (Shinka IT) are available upon request.*
     `,
     image: "/badr-big.jpg",
+    skills: ["Fortinet", "Check Point", "Cisco", "Stormshield", "Proxmox", "Python", "PowerShell", "Bash", "Linux", "Windows", "Azure"],
+    certifications: ["Fortinet NSE4 (FortiOS 7.6)", "Fortinet NSE6 (FortiManager)", "Cisco CCNA", "Cato CCA"],
   },
 };
 

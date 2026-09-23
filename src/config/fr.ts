@@ -88,25 +88,13 @@ export const SITE_CONTENT: SiteContent = {
     description: `
       Passionné par l'informatique depuis toujours, j'ai récemment validé mon Bachelier avec distinction. Mon profil technique est complété par plusieurs années d'expérience dans l'Horeca, m'ayant forgé un excellent relationnel et une grande rigueur.
 
-      **🛠️ Compétences Informatiques :**
-      • Réseaux & Télécommunications
-      • Cybersécurité (Fortinet, Check Point, Cisco, Stormshield)
-      • Virtualisation (Proxmox)
-      • Scripting et programmation (Python, PowerShell, Bash)
-
-      **📜 Certifications :**
-      • Cisco CCNA
-      • Fortinet NSE4 (FortiOS 7.6) & NSE6 (FortiManager)
-      • Cato CCA
-
-      **🌍 Langues :**
-      • Français (C2 - Maternelle)
-      • Anglais (B2 - Professionnel)
-      • Italien (B1)
+      **🌍 Langues :** Français (C2 - Maternelle) • Anglais (B2 - Professionnel) • Italien (B1)
 
       *Des références professionnelles (Shinka IT) sont disponibles sur demande.*
     `,
     image: "/badr-big.jpg",
+    skills: ["Fortinet", "Check Point", "Cisco", "Stormshield", "Proxmox", "Python", "PowerShell", "Bash", "Linux", "Windows", "Azure"],
+    certifications: ["Fortinet NSE4 (FortiOS 7.6)", "Fortinet NSE6 (FortiManager)", "Cisco CCNA", "Cato CCA"],
   },
 };
 

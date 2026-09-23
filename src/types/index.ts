@@ -41,6 +41,8 @@ export interface ProjectProps {
 export interface AboutProps {
   description: string;
   image: string;
+  skills?: string[];
+  certifications?: string[];
 }
 
 export interface HeaderProps {

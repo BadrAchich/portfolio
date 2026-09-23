@@ -6,7 +6,7 @@ export const SITE_CONFIG: SiteConfig = {
   description:
     "Ingénieur Réseaux & Cybersécurité basé en Belgique. Spécialisé en automatisation, sécurisation d'infrastructures et administration réseau (Fortinet, Cisco, Check Point).",
   lang: "fr",
-  siteLogo: "/badr-small.jpg",
+  siteLogo: "/bxdr-logo.jpg",
   navLinks: [
     { text: "Expérience", href: "#experience" },
     { text: "Projets", href: "#projects" },

@@ -10,7 +10,21 @@ const { description, image, name, title = "À propos", skills, badges } = Astro.
 ---
 
 <Section text={title} href="about">
-  <div class="flex flex-col items-center gap-12 md:flex-row md:gap-8 mb-12">
+  {skills && skills.length > 0 && (
+    <div class="mb-12">
+      <h3 class="mb-4 font-serif text-2xl font-medium text-white text-center md:text-left">Tech Stack</h3>
+      <BadgesCarousel items={skills} direction="left" speed="normal" />
+    </div>
+  )}
+
+  {badges && badges.length > 0 && (
+    <div class="mb-16">
+      <h3 class="mb-4 font-serif text-2xl font-medium text-white text-center md:text-left">Certifications</h3>
+      <BadgesCarousel items={badges} direction="right" speed="slow" />
+    </div>
+  )}
+
+  <div class="flex flex-col items-center gap-12 md:flex-row md:gap-8 mt-12">
     <p class="w-auto text-base text-neutral md:pr-5 whitespace-pre-line leading-relaxed">{description}</p>
     <div class="h-80 w-64 shrink-0 rotate-[5deg] bg-white p-4 md:rotate-[7deg]">
       <Image
@@ -22,18 +36,4 @@ const { description, image, name, title = "À propos", skills, badges } = Astro.
       />
     </div>
   </div>
-
-  {skills && skills.length > 0 && (
-    <div class="mt-8">
-      <h3 class="mb-4 font-serif text-2xl font-medium text-white text-center md:text-left">Tech Stack</h3>
-      <BadgesCarousel items={skills} direction="left" speed="normal" />
-    </div>
-  )}
-
-  {badges && badges.length > 0 && (
-    <div class="mt-12">
-      <h3 class="mb-4 font-serif text-2xl font-medium text-white text-center md:text-left">Certifications</h3>
-      <BadgesCarousel items={badges} direction="right" speed="slow" />
-    </div>
-  )}
 </Section>

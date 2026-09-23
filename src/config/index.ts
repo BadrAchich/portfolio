@@ -23,40 +23,31 @@ export const SITE_CONFIG: SiteConfig = {
 export const SITE_CONTENT: SiteContent = {
   hero: {
     name: "Badr Achich",
-    specialty: "Ingénieur Réseaux & Cybersécurité",
+    specialty: "Ingénieur Réseau et Cybersécurité",
     summary:
-      "Passionné par les technologies réseau et la cybersécurité, je transforme des problèmes complexes en solutions simples, efficaces et durables. Basé à Waremme, Belgique.",
-    email: "badrbadr25.06@gmail.com",
+      "Junior passionné et curieux, j'apprends vite et m'adapte facilement. Je recherche une équipe expérimentée et soudée pour développer mon expertise en sécurité des réseaux tout en m'investissant dans des missions concrètes.",
+    email: "", // Non divulgué
   },
   experience: [
     {
-      company: "Shinka",
-      position: "Cyber Security Engineer",
-      startDate: "2025",
-      endDate: "2026",
+      company: "Shinka IT",
+      position: "Ingénieur Réseaux & Cybersécurité",
+      startDate: "Févr. 2025",
+      endDate: "Mars 2026",
       summary: [
-        "Déploiement et sécurisation d'infrastructures réseau en environnement professionnel. Configuration de règles firewall, routage et VPN sur des équipements Fortinet, Check Point et Stormshield.",
-        "Migration d'un cluster Stormshield vers FortiGate, avec mise en place d'une politique de sécurité complète, surveillance des flux et durcissement des configurations.",
-        "Développement d'un script Python d'automatisation permettant de réduire jusqu'à 1 journée de travail manuel en un processus entièrement automatisé pour la maintenance et le diagnostic des environnements Fortinet et Check Point.",
-      ],
-    },
-    {
-      company: "Shinka",
-      position: "Stagiaire Infrastructure & Automatisation",
-      startDate: "2025",
-      endDate: "2025",
-      summary: [
-        "Participation active à des projets d'infrastructure réseau et d'automatisation. Découverte et prise en main des environnements Fortinet, Check Point et Stormshield en conditions réelles.",
-        "Contribution à l'écriture de scripts d'automatisation en Python et PowerShell pour simplifier les tâches répétitives d'administration système.",
+        "Intégration & Déploiement : Mise en place et configuration d'infrastructures réseaux et sécurité (Firewalls Fortinet, Check Point).",
+        "Support & Maintenance : Gestion des incidents (L1/L2), troubleshooting réseau et maintien en conditions opérationnelles des équipements.",
+        "Administration Système : Gestion de base des environnements serveurs (Windows/Linux), des hyperviseurs et des services cloud (Microsoft Azure).",
+        "Network Automation : Conception et développement de A à Z d'une application dédiée à l'automatisation des tâches de maintenance pour les environnements Fortinet et Check Point.",
       ],
     },
     {
       company: "HEPL",
-      position: "Bachelier en Informatique — Systèmes, Réseaux & Télécommunications",
+      position: "Bachelier en informatique, orientation réseau et télécom",
       startDate: "2020",
       endDate: "2025",
       summary:
-        "Formation approfondie en administration réseau, systèmes d'exploitation (Linux, Windows), protocoles réseau et télécommunications. Obtention du diplôme de Bachelier en Informatique option Réseaux & Télécommunications.",
+        "Diplôme obtenu avec distinction. Formation approfondie en administration réseau, systèmes d'exploitation, protocoles réseau et cybersécurité.",
     },
   ],
   projects: [

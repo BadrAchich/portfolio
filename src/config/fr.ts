@@ -92,7 +92,7 @@ export const SITE_CONTENT: SiteContent = {
 
       *Des références professionnelles (Shinka IT) sont disponibles sur demande.*
     `,
-    image: "/ba-logo.jpg",
+    image: "/bxdr-logo.jpg",
     skills: [
       {
         name: "Fortinet",

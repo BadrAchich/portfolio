@@ -1,8 +1,8 @@
 ---
 import type { HeroProps } from "@types";
-type Props = HeroProps;
+type Props = HeroProps & { contactText?: string };
 
-const { name, specialty, summary, email } = Astro.props;
+const { name, specialty, summary, email, contactText = "Me contacter" } = Astro.props;
 ---
 
 <section class="py-24 md:py-32" id="#hero">
@@ -26,6 +26,6 @@ const { name, specialty, summary, email } = Astro.props;
     target="_blank"
     rel="noopener noreferrer"
   >
-    Me contacter
+    {contactText}
   </a>
 </section>

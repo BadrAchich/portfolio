@@ -5,12 +5,13 @@ import type { ProjectProps } from "@types";
 
 interface Props {
   projects: ProjectProps[];
+  title?: string;
 }
 
-const { projects } = Astro.props;
+const { projects, title = "Projets" } = Astro.props;
 ---
 
-<Section text="Featured Projects" href="projects">
+<Section text={title} href="projects">
   {
     projects.map(({ name, summary, image, linkPreview, linkSource }, index) => {
       const top = 98 + index * 40;

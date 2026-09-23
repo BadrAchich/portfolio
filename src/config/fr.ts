@@ -11,6 +11,7 @@ export const SITE_CONFIG: SiteConfig = {
     { text: "Expérience", href: "#experience" },
     { text: "Projets", href: "#projects" },
     { text: "À propos", href: "#about" },
+    { text: "🇬🇧 EN", href: "/en" },
   ],
   socialLinks: [
     { text: "LinkedIn", href: "https://linkedin.com/in/badr-achich" },

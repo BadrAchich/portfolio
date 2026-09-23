@@ -1,8 +1,14 @@
 ---
 import Header from "@components/Header.astro";
 import { Font } from "astro:assets";
-import { SITE_CONFIG } from "@config";
+import type { SiteConfig } from "../types";
 import Footer from "@components/Footer.astro";
+
+export interface Props {
+  config: SiteConfig;
+}
+
+const { config } = Astro.props;
 
 const {
   title,
@@ -14,7 +20,7 @@ const {
   socialLinks,
   socialImage,
   canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
-} = SITE_CONFIG;
+} = config;
 
 const ogImgUrl = canonicalURL + socialImage;
 ---

@@ -126,7 +126,7 @@ export const SITE_CONTENT: SiteContent = {
       },
       {
         name: "PowerShell",
-        image: "https://cdn.simpleicons.org/powershell/white",
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/powershell/powershell-original.svg",
         skills: ["Windows Admin", "Active Directory", "Scripting", "Automation"]
       },
       {
@@ -141,12 +141,12 @@ export const SITE_CONTENT: SiteContent = {
       },
       {
         name: "Windows",
-        image: "https://cdn.simpleicons.org/windows/white",
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg",
         skills: ["Windows Server", "Active Directory", "Group Policies"]
       },
       {
         name: "Azure",
-        image: "https://cdn.simpleicons.org/microsoftazure/white",
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg",
         skills: ["Cloud Security", "Entra ID", "Networking", "IAM"]
       }
     ],

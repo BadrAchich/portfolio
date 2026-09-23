@@ -48,7 +48,7 @@ export interface BadgeProps {
 export interface AboutProps {
   description: string;
   image: string;
-  skills?: string[];
+  skills?: BadgeProps[];
   certifications?: string[];
   badges?: BadgeProps[];
 }

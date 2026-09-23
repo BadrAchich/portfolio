@@ -93,7 +93,63 @@ export const SITE_CONTENT: SiteContent = {
       *Des références professionnelles (Shinka IT) sont disponibles sur demande.*
     `,
     image: "/badr-big.jpg",
-    skills: ["Fortinet", "Check Point", "Cisco", "Stormshield", "Proxmox", "Python", "PowerShell", "Bash", "Linux", "Windows", "Azure"],
+    skills: [
+      {
+        name: "Fortinet",
+        image: "https://cdn.simpleicons.org/fortinet/white",
+        skills: ["FortiGate", "FortiManager", "Firewalls", "VPN", "SD-WAN"]
+      },
+      {
+        name: "Check Point",
+        image: "https://www.google.com/s2/favicons?domain=checkpoint.com&sz=128",
+        skills: ["Security Gateway", "SmartConsole", "Threat Prevention", "VPN"]
+      },
+      {
+        name: "Cisco",
+        image: "https://cdn.simpleicons.org/cisco/white",
+        skills: ["Routing", "Switching", "IOS", "Network Security"]
+      },
+      {
+        name: "Stormshield",
+        image: "https://www.google.com/s2/favicons?domain=stormshield.com&sz=128",
+        skills: ["SNS", "Endpoint Security", "IPS/IDS", "Network Protection"]
+      },
+      {
+        name: "Proxmox",
+        image: "https://cdn.simpleicons.org/proxmox/white",
+        skills: ["Virtualization", "LXC", "KVM", "Cluster Management"]
+      },
+      {
+        name: "Python",
+        image: "https://cdn.simpleicons.org/python/white",
+        skills: ["Scripting", "Automation", "API REST", "Data Parsing"]
+      },
+      {
+        name: "PowerShell",
+        image: "https://cdn.simpleicons.org/powershell/white",
+        skills: ["Windows Admin", "Active Directory", "Scripting", "Automation"]
+      },
+      {
+        name: "Bash",
+        image: "https://cdn.simpleicons.org/gnubash/white",
+        skills: ["Shell Scripting", "Linux Admin", "Cron", "Automation"]
+      },
+      {
+        name: "Linux",
+        image: "https://cdn.simpleicons.org/linux/white",
+        skills: ["Ubuntu", "Debian", "System Administration", "Security"]
+      },
+      {
+        name: "Windows",
+        image: "https://cdn.simpleicons.org/windows/white",
+        skills: ["Windows Server", "Active Directory", "Group Policies"]
+      },
+      {
+        name: "Azure",
+        image: "https://cdn.simpleicons.org/microsoftazure/white",
+        skills: ["Cloud Security", "Entra ID", "Networking", "IAM"]
+      }
+    ],
     badges: [
       {
         name: "Fortinet FortiManager 7.6 Administrator",

@@ -2,7 +2,6 @@
 import Section from "./Section.astro";
 import { Image } from "astro:assets";
 import type { AboutProps, HeroProps } from "@types";
-import Carousel from "./Carousel.astro";
 import BadgesCarousel from "./BadgesCarousel.astro";
 
 type Props = AboutProps & Pick<HeroProps, "name"> & { title?: string };
@@ -27,7 +26,7 @@ const { description, image, name, title = "À propos", skills, badges } = Astro.
   {skills && skills.length > 0 && (
     <div class="mt-8">
       <h3 class="mb-4 font-serif text-2xl font-medium text-white text-center md:text-left">Tech Stack</h3>
-      <Carousel items={skills} direction="left" speed="normal" />
+      <BadgesCarousel items={skills} direction="left" speed="normal" />
     </div>
   )}
 

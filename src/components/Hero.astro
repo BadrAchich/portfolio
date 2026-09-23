@@ -1,8 +1,16 @@
 ---
 import type { HeroProps } from "@types";
-type Props = HeroProps & { contactText?: string };
+type Props = HeroProps & { contactText?: string; downloadCvText?: string; cvLink?: string };
 
-const { name, specialty, summary, email, contactText = "Me contacter" } = Astro.props;
+const { 
+  name, 
+  specialty, 
+  summary, 
+  email, 
+  contactText = "Me contacter",
+  downloadCvText = "Télécharger CV",
+  cvLink = "/cv.pdf"
+} = Astro.props;
 ---
 
 <section class="py-24 md:py-32" id="#hero">
@@ -20,12 +28,22 @@ const { name, specialty, summary, email, contactText = "Me contacter" } = Astro.
     {summary}
   </p>
 
-  <a
-    class="inline-block rounded-full bg-primary px-8 py-5 text-sm leading-5 font-medium text-[#fff]"
-    href="https://www.linkedin.com/in/badr-achich-166595248/"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    {contactText}
-  </a>
+  <div class="flex flex-wrap gap-4">
+    <a
+      class="inline-block rounded-full bg-primary px-8 py-5 text-sm leading-5 font-medium text-[#fff] transition-opacity hover:opacity-90"
+      href="https://www.linkedin.com/in/badr-achich-166595248/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {contactText}
+    </a>
+    <a
+      class="inline-block rounded-full border border-white/20 bg-transparent px-8 py-5 text-sm leading-5 font-medium text-white transition-colors hover:bg-white/10"
+      href={cvLink}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {downloadCvText}
+    </a>
+  </div>
 </section>

@@ -30,6 +30,7 @@ export const SITE_CONTENT: SiteContent = {
     summary:
       "Junior passionné et curieux, j'apprends vite et m'adapte facilement. Je recherche une équipe expérimentée et soudée pour développer mon expertise en sécurité des réseaux tout en m'investissant dans des missions concrètes.",
     email: "",
+    downloadCvText: "Télécharger mon CV",
   },
   experience: [
     {

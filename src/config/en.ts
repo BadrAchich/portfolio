@@ -30,6 +30,7 @@ export const SITE_CONTENT: SiteContent = {
     summary:
       "Passionate and curious junior, I learn fast and adapt easily. I'm looking for an experienced and tightly knit team to develop my expertise in network security while investing myself in concrete missions.",
     email: "",
+    downloadCvText: "Download Resume",
   },
   experience: [
     {

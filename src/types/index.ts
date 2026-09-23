@@ -20,6 +20,7 @@ export interface HeroProps {
   specialty: string;
   summary: string;
   email: string;
+  downloadCvText?: string;
 }
 
 export interface ExperienceProps {

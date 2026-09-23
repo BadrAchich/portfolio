@@ -94,7 +94,28 @@ export const SITE_CONTENT: SiteContent = {
     `,
     image: "/badr-big.jpg",
     skills: ["Fortinet", "Check Point", "Cisco", "Stormshield", "Proxmox", "Python", "PowerShell", "Bash", "Linux", "Windows", "Azure"],
-    certifications: ["Fortinet NSE4 (FortiOS 7.6)", "Fortinet NSE6 (FortiManager)", "Cisco CCNA", "Cato CCA"],
+    badges: [
+      {
+        name: "Fortinet NSE 6 Certified in Secure Networking",
+        image: "https://images.credly.com/images/f9429e70-1150-4cea-9e73-f0758b32624b/blob",
+        url: "https://www.credly.com/badges/2733fbce-c8ed-48ef-93e0-8dc3adf175c7/public_url"
+      },
+      {
+        name: "Fortinet NSE 4 Certified in FortiOS",
+        image: "https://images.credly.com/images/7413400c-4630-40ab-b8ac-200eaee90e58/blob",
+        url: "https://www.credly.com/badges/286a0d83-8708-4090-8902-0d366f3e9afe/public_url"
+      },
+      {
+        name: "Cisco Certified Network Associate",
+        image: "https://images.credly.com/images/683783d8-eaac-4c37-a14d-11bd8a36321d/ccna_600.png",
+        url: "https://www.credly.com/badges/05a0154c-a45a-450b-85ae-8d8a5e86b058/public_url"
+      },
+      {
+        name: "Cato Certified Associate",
+        image: "https://images.credly.com/images/6b7d1518-5326-4f6e-8931-c8b15d689655/blob",
+        url: "https://www.credly.com/badges/ccdb1f6a-dddc-4d5e-8428-4a62f257485c/public_url"
+      }
+    ],
   },
 };
 

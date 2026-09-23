@@ -38,11 +38,18 @@ export interface ProjectProps {
   linkSource?: string;
 }
 
+export interface BadgeProps {
+  name: string;
+  image: string;
+  url?: string;
+}
+
 export interface AboutProps {
   description: string;
   image: string;
   skills?: string[];
   certifications?: string[];
+  badges?: BadgeProps[];
 }
 
 export interface HeaderProps {

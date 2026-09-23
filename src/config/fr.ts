@@ -65,7 +65,7 @@ export const SITE_CONTENT: SiteContent = {
         "Conception et développement de A à Z d'une application Python dédiée à l'automatisation des tâches de maintenance. Permet de réduire jusqu'à 1 journée de travail manuel en un processus automatisé.",
       linkPreview: "/",
       linkSource: "https://github.com/BadrAchich",
-      image: "/spotifu.png",
+      image: "/proj-auto.jpg",
     },
     {
       name: "Migration Stormshield → FortiGate",
@@ -73,7 +73,7 @@ export const SITE_CONTENT: SiteContent = {
         "Projet d'intégration et déploiement : migration complète d'un cluster Stormshield vers FortiGate incluant la configuration des règles firewall, du routage et des tunnels VPN.",
       linkPreview: "/",
       linkSource: "https://github.com/BadrAchich",
-      image: "/shopify-clon.png",
+      image: "/proj-migr.jpg",
     },
     {
       name: "Scripts & Network Automation",
@@ -81,7 +81,7 @@ export const SITE_CONTENT: SiteContent = {
         "Création de scripts d'automatisation (Python, PowerShell, Bash) pour la gestion et le monitoring d'infrastructures. Une approche orientée solution pour optimiser le temps et réduire les erreurs humaines.",
       linkPreview: "/",
       linkSource: "https://github.com/BadrAchich",
-      image: "/clone-ig.png",
+      image: "/proj-scripts.jpg",
     },
   ],
   about: {

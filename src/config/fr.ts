@@ -1,8 +1,8 @@
 import type { SiteConfig, SiteContent } from "../types";
 
 export const SITE_CONFIG: SiteConfig = {
-  title: "Bxdr — Ingénieur Réseaux & Cybersécurité",
-  author: "Bxdr",
+  title: "Badr Achich | Ingénieur Réseaux & Cybersécurité",
+  author: "Badr Achich",
   description:
     "Ingénieur Réseaux & Cybersécurité basé en Belgique. Spécialisé en automatisation, sécurisation d'infrastructures et administration réseau (Fortinet, Cisco, Check Point).",
   lang: "fr",

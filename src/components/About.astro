@@ -11,30 +11,32 @@ const { description, image, name, title = "À propos", skills, badges } = Astro.
 
 <Section href="about">
   {skills && skills.length > 0 && (
-    <div class="mb-12">
+    <div id="tech" class="mb-12 scroll-mt-24">
       <h3 class="mb-6 font-serif text-4xl font-bold tracking-tighter text-white">Tech Stack</h3>
       <BadgesCarousel items={skills} direction="left" speed="normal" />
     </div>
   )}
 
   {badges && badges.length > 0 && (
-    <div class="mb-16">
+    <div id="certifications" class="mb-16 scroll-mt-24">
       <h3 class="mb-6 font-serif text-4xl font-bold tracking-tighter text-white">Certifications</h3>
       <BadgesCarousel items={badges} direction="right" speed="slow" />
     </div>
   )}
 
-  <h2 class="mb-8 font-serif text-4xl font-bold tracking-tighter text-white md:text-5xl">{title}</h2>
-  <div class="flex flex-col items-center gap-12 md:flex-row md:gap-8 mt-4">
-    <p class="w-auto text-base text-neutral md:pr-5 whitespace-pre-line leading-relaxed">{description}</p>
-    <div class="h-80 w-64 shrink-0 rotate-[5deg] bg-white p-4 md:rotate-[7deg]">
-      <Image
-        class="object-cover"
-        src={image}
-        width="260"
-        height="260"
-        alt={name}
-      />
+  <div id="about-me" class="scroll-mt-24">
+    <h2 class="mb-8 font-serif text-4xl font-bold tracking-tighter text-white md:text-5xl">{title}</h2>
+    <div class="flex flex-col-reverse items-center gap-12 md:flex-row md:gap-12 mt-4">
+      <p class="w-full text-lg text-neutral/90 md:w-2/3 whitespace-pre-line leading-relaxed text-justify md:text-left">{description}</p>
+      <div class="w-48 h-48 md:w-64 md:h-64 shrink-0 overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
+        <Image
+          class="h-full w-full object-cover"
+          src={image}
+          width="260"
+          height="260"
+          alt={name}
+        />
+      </div>
     </div>
   </div>
 </Section>

@@ -88,18 +88,24 @@ const { siteLogo, navLinks } = Astro.props;
     { threshold: 0.5 },
   );
 
-  document.querySelectorAll("section").forEach((section) => {
-    observer.observe(section);
-  });
+  const observeSections = () => {
+    navItems.forEach((item) => {
+      const href = item.getAttribute("href");
+      if (href && href.startsWith("#")) {
+        const target = document.querySelector(href);
+        if (target) observer.observe(target);
+      }
+    });
+  };
+
+  observeSections();
 
   // Cleanup observer
   document.onvisibilitychange = () => {
     if (document.visibilityState === "hidden") {
       observer.disconnect();
     } else {
-      document.querySelectorAll("section").forEach((section) => {
-        observer.observe(section);
-      });
+      observeSections();
     }
   };
 </script>

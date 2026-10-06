@@ -67,6 +67,24 @@ export const SITE_CONTENT: SiteContent = {
   ],
   projects: [
     {
+      name: "Fortinet Migration & HA",
+      summary:
+        "Replacement of a Stormshield firewall infrastructure with a FortiGate cluster. Advanced integration with an HP core network via link aggregation (LACP) to ensure hardware redundancy and optimize bandwidth.",
+      image: "/proj-migr.jpg",
+    },
+    {
+      name: "Network Audit & Compliance Tool",
+      summary:
+        "Development of consolidation matrices (spreadsheets/scripts) for the cross-verification of VLANs, SVI interfaces, and firewall rules against the A07 reference standard across multiple operational sites.",
+      image: "/proj-auto.jpg",
+    },
+    {
+      name: "Python Chess Engine",
+      summary:
+        "Design of an interactive terminal-based chess game to explore algorithmic concepts. Programming of the board's matrix representation and the mathematical logic of piece movements.",
+      image: "/proj-chess.jpg",
+    },
+    {
       name: "Infra & Virtualization (Proxmox VE)",
       summary:
         "Deployment and administration of a physical server (Homelab). Advanced virtualization management via virtual machines (VMs) as well as LXC containers and Docker.",
@@ -82,7 +100,7 @@ export const SITE_CONTENT: SiteContent = {
       name: "Simulations & Cybersecurity",
       summary:
         "Deployment of test environments with PNETLab to simulate complex network topologies (Cisco, Fortinet). Regular practice on platforms (Hack The Box, OverTheWire).",
-      image: "/proj-migr.jpg",
+      image: "/bxdr-og.jpg",
     },
   ],
   about: {

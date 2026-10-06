@@ -67,6 +67,24 @@ export const SITE_CONTENT: SiteContent = {
   ],
   projects: [
     {
+      name: "Migration & HA Fortinet",
+      summary:
+        "Remplacement d'une infrastructure pare-feu Stormshield par un cluster FortiGate. Intégration avancée avec un cœur de réseau HP via l'agrégation de liens (LACP) pour assurer la redondance matérielle et optimiser la bande passante.",
+      image: "/proj-migr.jpg",
+    },
+    {
+      name: "Audit & Conformité Réseau",
+      summary:
+        "Développement de matrices de consolidation (tableurs/scripts) pour la vérification croisée des VLAN, des interfaces SVI et des règles de pare-feu par rapport au standard de référence A07 sur de multiples sites opérationnels.",
+      image: "/proj-auto.jpg",
+    },
+    {
+      name: "Moteur d'Échecs en Python",
+      summary:
+        "Conception d'un jeu d'échecs interactif jouable en terminal. Programmation de la représentation matricielle de l'échiquier et de la logique mathématique de déplacement des pièces pour explorer les concepts algorithmiques.",
+      image: "/proj-chess.jpg",
+    },
+    {
       name: "Infra & Virtualisation (Proxmox VE)",
       summary:
         "Déploiement et administration d'un serveur physique (Homelab). Gestion avancée de la virtualisation via des machines virtuelles (VMs) ainsi que des conteneurs LXC et Docker.",
@@ -82,7 +100,7 @@ export const SITE_CONTENT: SiteContent = {
       name: "Simulations & Cybersécurité",
       summary:
         "Déploiement d'environnements de tests avec PNETLab pour la simulation de topologies réseau complexes (Cisco, Fortinet). Pratique régulière sur des plateformes (Hack The Box, OverTheWire).",
-      image: "/proj-migr.jpg",
+      image: "/bxdr-og.jpg",
     },
   ],
   about: {

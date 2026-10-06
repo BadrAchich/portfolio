@@ -28,8 +28,8 @@ export const SITE_CONTENT: SiteContent = {
     name: "Badr Achich",
     specialty: "Network and Cybersecurity Engineer",
     summary:
-      "Passionate and curious junior, I learn fast and adapt easily. I'm looking for an experienced and tightly knit team to develop my expertise in network security while investing myself in concrete missions.",
-    email: "",
+      "Network and Cybersecurity Engineer, CCNA and Fortinet (NSE4/NSE6) certified. With a proven track record in deploying infrastructures (FortiGate, Check Point), I also design automation tools in Python. I am looking for a dynamic team to take on new challenges in network security.",
+    email: "badr.achich.contact@gmail.com",
     downloadCvText: "Download Resume",
   },
   experience: [
@@ -39,17 +39,21 @@ export const SITE_CONTENT: SiteContent = {
       startDate: "Feb 2025",
       endDate: "Mar 2026",
       summary: [
-        "Support & Maintenance: Incident management (L1/L2), network troubleshooting, and maintaining security equipment in operational condition.",
-        "System Administration: Basic management of server environments (Windows/Linux), hypervisors, and cloud services (Microsoft Azure).",
+        "Integration & Migration: Replacement of existing equipment with FortiGate HA clusters. Advanced routing and connectivity configuration (LACP).",
+        "Network Automation (DevNet): End-to-end design and development of a Python application to automate and optimize maintenance tasks (Fortinet, Check Point).",
+        "Audit & Compliance: Creation of multi-site consolidation matrices (VLANs, SVI, firewalls) to ensure architectural compliance.",
+        "Support & Maintenance: Incident management (L1/L2), advanced network troubleshooting, firmware upgrades, and server administration (Windows/Linux) and Azure.",
       ],
     },
     {
-      company: "Hospitality & Logistics Sector",
-      position: "Reception Manager, Head Bartender & Versatile Worker",
+      company: "CHBA, Artable, Colona, Trafic...",
+      position: "Various Student Jobs & Versatile Experiences",
       startDate: "2018",
       endDate: "2025",
       summary: [
-        "Various experiences (CHBA, Laveleye Brasserie, Colona...) developing strong adaptability, a sense of responsibility, teamwork, and stress management in demanding environments.",
+        "Reception Manager, Head Bartender, Inventory Manager, and Versatile Worker.",
+        "Customer service, stress management, and reactivity in dynamic environments (Hospitality/Events/Healthcare).",
+        "Organization, rigor, and strong team spirit within multidisciplinary groups.",
       ],
     },
     {
@@ -63,39 +67,27 @@ export const SITE_CONTENT: SiteContent = {
   ],
   projects: [
     {
-      name: "Fortinet Migration & HA",
+      name: "Infra & Virtualization (Proxmox VE)",
       summary:
-        "Replacement of a Stormshield firewall infrastructure with a FortiGate cluster. Advanced integration with an HP core network via link aggregation (LACP) to ensure hardware redundancy and optimize bandwidth.",
-      image: "/proj-migr.jpg",
-    },
-    {
-      name: "Network Audit & Compliance Tool",
-      summary:
-        "Development of consolidation matrices (spreadsheets/scripts) for the cross-verification of VLANs, SVI interfaces, and firewall rules against the A07 reference standard across multiple operational sites.",
-      image: "/proj-auto.jpg",
-    },
-    {
-      name: "Python Chess Engine",
-      summary:
-        "Design of an interactive terminal-based chess game to explore algorithmic concepts. Programming of the board's matrix representation and the mathematical logic of piece movements.",
-      image: "/proj-chess.jpg",
-    },
-    {
-      name: "Proxmox & Containers Infra",
-      summary:
-        "Complete design and management of a home server. Deployment of VMs and containers (LXC, Docker via Portainer) for self-hosting a variety of network and media services (Nginx Proxy Manager, AdGuard, Audiobookshelf...).",
+        "Deployment and administration of a physical server (Homelab). Advanced virtualization management via virtual machines (VMs) as well as LXC containers and Docker.",
       image: "/proj-scripts.jpg",
     },
     {
-      name: "Secure Remote Access",
+      name: "Network & Security",
       summary:
-        "Implementation of a modern private network via Tailscale subnet routing, coupled with dynamic DNS resolution (DuckDNS) to maintain highly secure external access to the infrastructure.",
+        "Configuration of a reverse proxy (Nginx Proxy Manager) and securing remote access via Tailscale. Dynamic DNS management (DuckDNS) and network filtering (AdGuard Home).",
       image: "/proj-homelab.jpg",
+    },
+    {
+      name: "Simulations & Cybersecurity",
+      summary:
+        "Deployment of test environments with PNETLab to simulate complex network topologies (Cisco, Fortinet). Regular practice on platforms (Hack The Box, OverTheWire).",
+      image: "/proj-migr.jpg",
     },
   ],
   about: {
     description: `
-      Always passionate about IT, I recently graduated with honors with my Bachelor's degree. My technical profile is complemented by several years of experience in the hospitality industry, which gave me excellent interpersonal skills and great rigor.
+      Network and Cybersecurity Engineer, CCNA and Fortinet (NSE4/NSE6) certified. I acquired solid technical skills through my degree (graduated with honors), my experience deploying infrastructures (FortiGate, Check Point), and Python automation. My profile is complemented by several years of versatile experience (Hospitality/Logistics), forging my stress management and adaptability.
 
       **🌍 Languages:** French (C2 - Native) • English (B2 - Professional) • Italian (B1)
 

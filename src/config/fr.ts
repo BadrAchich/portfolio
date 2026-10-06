@@ -28,8 +28,8 @@ export const SITE_CONTENT: SiteContent = {
     name: "Badr Achich",
     specialty: "Ingénieur Réseau et Cybersécurité",
     summary:
-      "Junior passionné et curieux, j'apprends vite et m'adapte facilement. Je recherche une équipe expérimentée et soudée pour développer mon expertise en sécurité des réseaux tout en m'investissant dans des missions concrètes.",
-    email: "",
+      "Ingénieur Réseaux et Cybersécurité, certifié CCNA et Fortinet (NSE4/NSE6). Fort d'une expérience réussie en déploiement d'infrastructures (FortiGate, Check Point), je conçois également des outils d'automatisation en Python. Je recherche une équipe dynamique pour relever de nouveaux défis en sécurité des réseaux.",
+    email: "badr.achich.contact@gmail.com",
     downloadCvText: "Télécharger mon CV",
   },
   experience: [
@@ -39,17 +39,21 @@ export const SITE_CONTENT: SiteContent = {
       startDate: "Févr. 2025",
       endDate: "Mars 2026",
       summary: [
-        "Support & Maintenance : Gestion des incidents (L1/L2), troubleshooting réseau et maintien en conditions opérationnelles des équipements de sécurité.",
-        "Administration Système : Gestion de base des environnements serveurs (Windows/Linux), des hyperviseurs et des services cloud (Microsoft Azure).",
+        "Intégration & Migration : Remplacement d'équipements existants par des clusters FortiGate HA. Configuration avancée du routage et de la connectivité (LACP).",
+        "Automatisation Réseau (DevNet) : Conception et développement de A à Z d'une application en Python pour automatiser et optimiser les tâches de maintenance (Fortinet, Check Point).",
+        "Audit & Conformité : Réalisation de matrices de consolidation multi-sites (VLAN, SVI, firewalls) pour garantir la conformité architecturale.",
+        "Support & Maintenance : Gestion des incidents (L1/L2), troubleshooting réseau avancé, upgrades de firmwares et administration serveurs (Windows/Linux) et Azure.",
       ],
     },
     {
-      company: "Secteur Horeca & Logistique",
-      position: "Responsable d'accueil, Chef de bar & Ouvrier polyvalent",
+      company: "CHBA, Artable, Colona, Trafic...",
+      position: "Divers emplois étudiants & Expériences polyvalentes",
       startDate: "2018",
       endDate: "2025",
       summary: [
-        "Diverses expériences (CHBA, Brasserie de Laveleye, Colona...) développant une forte capacité d'adaptation, le sens des responsabilités, le travail en équipe et la gestion du stress en environnement exigeant.",
+        "Responsable accueil, Chef de bar, Gestionnaire de stocks et Ouvrier polyvalent.",
+        "Service client, gestion du stress et réactivité dans des environnements dynamiques (Horeca/Événementiel/Hospitalier).",
+        "Organisation, rigueur et fort esprit d'équipe au sein de groupes pluridisciplinaires.",
       ],
     },
     {
@@ -63,39 +67,27 @@ export const SITE_CONTENT: SiteContent = {
   ],
   projects: [
     {
-      name: "Migration & HA Fortinet",
+      name: "Infra & Virtualisation (Proxmox VE)",
       summary:
-        "Remplacement d'une infrastructure pare-feu Stormshield par un cluster FortiGate. Intégration avancée avec un cœur de réseau HP via l'agrégation de liens (LACP) pour assurer la redondance matérielle et optimiser la bande passante.",
-      image: "/proj-migr.jpg",
-    },
-    {
-      name: "Audit & Conformité Réseau",
-      summary:
-        "Développement de matrices de consolidation (tableurs/scripts) pour la vérification croisée des VLAN, des interfaces SVI et des règles de pare-feu par rapport au standard de référence A07 sur de multiples sites opérationnels.",
-      image: "/proj-auto.jpg",
-    },
-    {
-      name: "Moteur d'Échecs en Python",
-      summary:
-        "Conception d'un jeu d'échecs interactif jouable en terminal. Programmation de la représentation matricielle de l'échiquier et de la logique mathématique de déplacement des pièces pour explorer les concepts algorithmiques.",
-      image: "/proj-chess.jpg",
-    },
-    {
-      name: "Infra Proxmox & Conteneurs",
-      summary:
-        "Conception et gestion d'un serveur domestique. Déploiement de VM et conteneurs (LXC, Docker via Portainer) pour l'auto-hébergement et la gestion d'un panel de services (Nginx Proxy Manager, AdGuard, Audiobookshelf...).",
+        "Déploiement et administration d'un serveur physique (Homelab). Gestion avancée de la virtualisation via des machines virtuelles (VMs) ainsi que des conteneurs LXC et Docker.",
       image: "/proj-scripts.jpg",
     },
     {
-      name: "Sécurisation Accès Distants",
+      name: "Réseau & Sécurité",
       summary:
-        "Mise en place d'un réseau privé moderne via le routage de sous-réseaux Tailscale, couplé à une résolution DNS dynamique (DuckDNS) pour maintenir l'accès externe à l'infrastructure de manière ultra-sécurisée.",
+        "Configuration d'un reverse proxy (Nginx Proxy Manager) et sécurisation des accès distants via Tailscale. Gestion du DNS dynamique (DuckDNS) et filtrage réseau (AdGuard Home).",
       image: "/proj-homelab.jpg",
+    },
+    {
+      name: "Simulations & Cybersécurité",
+      summary:
+        "Déploiement d'environnements de tests avec PNETLab pour la simulation de topologies réseau complexes (Cisco, Fortinet). Pratique régulière sur des plateformes (Hack The Box, OverTheWire).",
+      image: "/proj-migr.jpg",
     },
   ],
   about: {
     description: `
-      Passionné par l'informatique depuis toujours, j'ai récemment validé mon Bachelier avec distinction. Mon profil technique est complété par plusieurs années d'expérience dans l'Horeca, m'ayant forgé un excellent relationnel et une grande rigueur.
+      Ingénieur Réseaux et Cybersécurité, certifié CCNA et Fortinet (NSE4/NSE6). J'ai acquis de solides compétences techniques grâce à ma formation avec distinction, mes expériences en déploiement d'infrastructures (FortiGate, Check Point) et l'automatisation en Python. Mon profil est complété par plusieurs années d'expérience polyvalente (Horeca/Logistique), forgeant ma gestion du stress et ma capacité d'adaptation.
 
       **🌍 Langues :** Français (C2 - Maternelle) • Anglais (B2 - Professionnel) • Italien (B1)
 

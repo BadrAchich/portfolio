@@ -30,8 +30,277 @@ export const SITE_CONTENT: SiteContent = {
     summary:
       "Ingénieur Réseaux et Cybersécurité, certifié CCNA et Fortinet (NSE4/NSE6). Fort d'une expérience réussie en déploiement d'infrastructures (FortiGate, Check Point), je conçois également des outils d'automatisation en Python. Je recherche une équipe dynamique pour relever de nouveaux défis en sécurité des réseaux.",
     email: "badr.achich.contact@gmail.com",
+    tagline: "Sécuriser, automatiser, bâtir.",
+    label: "Badr Achich · Ingénieur Réseaux & Cybersécurité · 2026",
+    ctaText: "EXPLORER / CV",
+    cvLink: "/cv.pdf",
     downloadCvText: "Télécharger mon CV",
   },
+  ticker: [
+    {
+      word: "FORTINET",
+      pos: "[N]",
+      phon: "/fɔʁ.ti.nɛt/",
+      def: "Clusters HA, pare-feu nouvelle génération et segmentation",
+    },
+    {
+      word: "CISCO",
+      pos: "[N]",
+      phon: "/ˈsɪs.koʊ/",
+      def: "Routage, switching L2/L3 et architecture résiliente",
+    },
+    {
+      word: "DEVNET",
+      pos: "[N]",
+      phon: "/ˈdɛv.nɛt/",
+      def: "Automatisation Python, API REST et infrastructure as code",
+    },
+    {
+      word: "TAILSCALE",
+      pos: "[N]",
+      phon: "/ˈteɪl.skeɪl/",
+      def: "Réseau maillé WireGuard et accès distant Zero Trust",
+    },
+  ],
+  projects: [
+    {
+      name: "Migration & HA Fortinet",
+      summary:
+        "Remplacement d'une infrastructure pare-feu Stormshield par un cluster FortiGate. Intégration avancée avec un cœur de réseau HP via l'agrégation de liens (LACP) pour assurer la redondance matérielle et optimiser la bande passante.",
+      image: "/proj-migr.jpg",
+      visualClass: "visual-brol-1",
+      titleColorClass: "title-lavender",
+      meta: {
+        domain: "Cybersécurité & Haute Disponibilité",
+        format: "Infrastructure Réseau",
+        tools: "FortiGate, Stormshield, LACP",
+        year: "2025",
+      },
+    },
+    {
+      name: "Audit & Conformité Réseau",
+      summary:
+        "Développement de matrices de consolidation (tableurs/scripts) pour la vérification croisée des VLAN, des interfaces SVI et des règles de pare-feu par rapport au standard de référence A07 sur de multiples sites opérationnels.",
+      image: "/proj-auto.jpg",
+      visualClass: "visual-brol-2",
+      titleColorClass: "title-pink",
+      meta: {
+        domain: "Gouvernance & Audit Réseau",
+        format: "Scripting & Analyse",
+        tools: "Python, Excel, VLAN/SVI, A07",
+        year: "2025",
+      },
+    },
+    {
+      name: "Moteur d'Échecs en Python",
+      summary:
+        "Conception d'un jeu d'échecs interactif jouable en terminal. Programmation de la représentation matricielle de l'échiquier et de la logique mathématique de déplacement des pièces pour explorer les concepts algorithmiques.",
+      image: "/proj-chess.jpg",
+      visualClass: "visual-brol-3",
+      titleColorClass: "title-red",
+      meta: {
+        domain: "Algorithmique & Logiciel",
+        format: "CLI / Console",
+        tools: "Python 3, POO, Matrices",
+        year: "2024",
+      },
+    },
+    {
+      name: "Infra & Virtualisation (Proxmox VE)",
+      summary:
+        "Déploiement et administration d'un serveur physique (Homelab). Gestion avancée de la virtualisation via des machines virtuelles (VMs) ainsi que des conteneurs LXC et Docker.",
+      image: "/proj-scripts.jpg",
+      visualClass: "visual-brol-1",
+      titleColorClass: "title-gold",
+      meta: {
+        domain: "Virtualisation & Systèmes",
+        format: "Homelab Bare-Metal",
+        tools: "Proxmox VE, LXC, Docker, KVM",
+        year: "2024",
+      },
+    },
+    {
+      name: "Réseau & Sécurité",
+      summary:
+        "Configuration d'un reverse proxy (Nginx Proxy Manager) et sécurisation des accès distants via Tailscale. Gestion du DNS dynamique (DuckDNS) et filtrage réseau (AdGuard Home).",
+      image: "/proj-homelab.jpg",
+      visualClass: "visual-brol-2",
+      titleColorClass: "title-lavender",
+      meta: {
+        domain: "Zero Trust & Services Web",
+        format: "Réseau Privé & Sécurisation",
+        tools: "Tailscale, Nginx, AdGuard, DNS",
+        year: "2024",
+      },
+    },
+    {
+      name: "Simulations & Cybersécurité",
+      summary:
+        "Déploiement d'environnements de tests avec PNETLab pour la simulation de topologies réseau complexes (Cisco, Fortinet). Pratique régulière sur des plateformes (Hack The Box, OverTheWire).",
+      image: "/bxdr-og.jpg",
+      visualClass: "visual-brol-3",
+      titleColorClass: "title-pink",
+      meta: {
+        domain: "Simulation Réseau & Pentest",
+        format: "Lab & Entraînement",
+        tools: "PNETLab, Cisco IOS, FortiOS, HTB",
+        year: "2023 - 2025",
+      },
+    },
+  ],
+  about: {
+    headline: "INGÉNIEUR",
+    accentWord: "RÉSEAU & CYBERSÉCURITÉ",
+    subheadline: "CERTIFIÉ",
+    stats: [
+      { value: "5+", label: "Années d'expérience & études" },
+      { value: "3", label: "Certifications Cisco & Fortinet" },
+      { value: "10+", label: "Projets & labs d'infrastructure" },
+    ],
+    description: `
+      Ingénieur Réseaux et Cybersécurité, certifié CCNA et Fortinet (NSE4/NSE6). J'ai acquis de solides compétences techniques grâce à ma formation avec distinction, mes expériences en déploiement d'infrastructures (FortiGate, Check Point) et l'automatisation en Python. Mon profil est complété par plusieurs années d'expérience polyvalente (Horeca/Logistique), forgeant ma gestion du stress et ma capacité d'adaptation.
+
+      **🌍 Langues :** Français (C2 - Maternelle) • Anglais (B2 - Professionnel) • Italien (B1)
+
+      *Des références professionnelles (Shinka IT) sont disponibles sur demande.*
+    `,
+    image: "/bxdr-logo.jpg",
+    skills: [
+      {
+        name: "Fortinet",
+        image: "https://cdn.simpleicons.org/fortinet/white",
+        skills: ["FortiGate", "FortiManager", "Firewalls", "VPN", "SD-WAN"],
+      },
+      {
+        name: "Check Point",
+        image: "https://www.google.com/s2/favicons?domain=checkpoint.com&sz=128",
+        skills: ["Security Gateway", "SmartConsole", "Threat Prevention", "VPN"],
+      },
+      {
+        name: "Cisco",
+        image: "https://cdn.simpleicons.org/cisco/white",
+        skills: ["Routing", "Switching", "IOS", "Network Security"],
+      },
+      {
+        name: "Stormshield",
+        image: "https://www.google.com/s2/favicons?domain=stormshield.com&sz=128",
+        skills: ["SNS", "Endpoint Security", "IPS/IDS", "Network Protection"],
+      },
+      {
+        name: "Proxmox",
+        image: "https://cdn.simpleicons.org/proxmox/white",
+        skills: ["Virtualization", "LXC", "KVM", "Cluster Management"],
+      },
+      {
+        name: "Python",
+        image: "https://cdn.simpleicons.org/python/white",
+        skills: ["Scripting", "Automation", "API REST", "Data Parsing"],
+      },
+      {
+        name: "PowerShell",
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/powershell/powershell-original.svg",
+        skills: ["Windows Admin", "Active Directory", "Scripting", "Automation"],
+      },
+      {
+        name: "Bash",
+        image: "https://cdn.simpleicons.org/gnubash/white",
+        skills: ["Shell Scripting", "Linux Admin", "Cron", "Automation"],
+      },
+      {
+        name: "Linux",
+        image: "https://cdn.simpleicons.org/linux/white",
+        skills: ["Ubuntu", "Debian", "System Administration", "Security"],
+      },
+      {
+        name: "Windows",
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg",
+        skills: ["Windows Server", "Active Directory", "Group Policies"],
+      },
+      {
+        name: "Azure",
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg",
+        skills: ["Cloud Security", "Entra ID", "Networking", "IAM"],
+      },
+    ],
+    badges: [
+      {
+        name: "Fortinet FortiManager 7.6 Administrator",
+        image: "https://images.credly.com/images/b0885dbc-a96a-4d87-ba7a-d5339c543346/blob",
+        url: "https://www.credly.com/badges/805f73b4-4859-4104-8ced-661eb7f6911b/public_url",
+        skills: ["Administrative Domains", "Central Management", "Device Provisioning", "FortiGuard", "Object Management", "Policy Management", "Security Administration"],
+      },
+      {
+        name: "Fortinet NSE 6 Certified in Secure Networking",
+        image: "https://images.credly.com/images/f9429e70-1150-4cea-9e73-f0758b32624b/blob",
+        url: "https://www.credly.com/badges/2733fbce-c8ed-48ef-93e0-8dc3adf175c7/public_url",
+        skills: ["Administrative Domains", "Central Management", "Device Management", "Fortinet", "Log Data", "NAC", "Network Admin", "Network Security", "Policy Management", "Security Systems"],
+      },
+      {
+        name: "Cato Certified Associate",
+        image: "https://images.credly.com/images/6b7d1518-5326-4f6e-8931-c8b15d689655/blob",
+        url: "https://www.credly.com/badges/ccdb1f6a-dddc-4d5e-8428-4a62f257485c/public_url",
+        skills: ["SD-WAN", "SDP", "ZTNA"],
+      },
+      {
+        name: "Fortinet FortiOS 7.6 Administrator",
+        image: "https://images.credly.com/images/903ba5f9-3093-47d7-9c7c-83a4a95cb59a/blob",
+        url: "https://www.credly.com/badges/8a54c370-8293-4da0-8854-d04bbad86196/public_url",
+        skills: ["Antivirus", "Authentication", "Firewall", "FortiCNF", "FortiGate Cloud", "FortiOS", "FortiSASE", "High Availability", "IPS", "Logging", "NAT", "Routing", "VPN", "Web Filtering"],
+      },
+      {
+        name: "Fortinet NSE 4 Certified in FortiOS",
+        image: "https://images.credly.com/images/7413400c-4630-40ab-b8ac-200eaee90e58/blob",
+        url: "https://www.credly.com/badges/286a0d83-8708-4090-8902-0d366f3e9afe/public_url",
+        skills: ["Antivirus", "Authentication", "Firewalls", "FortiGate", "High Availability", "IPS", "Log Analysis", "Network Security", "Routing", "SASE", "SD-WAN", "VPN", "ZTNA", "Zero Trust"],
+      },
+      {
+        name: "Cisco Certified Network Associate",
+        image: "https://images.credly.com/images/683783d8-eaac-4c37-a14d-11bd8a36321d/ccna_600.png",
+        url: "https://www.credly.com/badges/05a0154c-a45a-450b-85ae-8d8a5e86b058/public_url",
+        skills: ["Access Connectivity", "IP Services", "Network Access", "Network Fundamentals", "Security Fundamentals", "Automation", "Routing", "IP", "Programmability"],
+      },
+      {
+        name: "CCNA: Enterprise Networking, Security & Automation",
+        image: "https://images.credly.com/images/0a6d331e-8abf-4272-a949-33f754569a76/CCNAENSA__1_.png",
+        url: "https://www.credly.com/badges/18ade446-a79f-4b7f-825a-ba4107524548/public_url",
+        skills: ["Dynamic Routing", "NAT", "Network Automation", "QoS", "Security Threat Mitigation", "SDN", "Virtualization", "WAN"],
+      },
+    ],
+  },
+  expertise: [
+    {
+      title: "SÉCURITÉ PÉRIMÉTRIQUE",
+      role: "Firewalls & Haute Disponibilité",
+      description:
+        "Déploiement de clusters FortiGate HA, Check Point et Stormshield. Politiques de filtrage, inspection SSL et segmentation.",
+      gradientClass: "member-bg-1",
+      shape: "circle",
+    },
+    {
+      title: "ARCHITECTURE RÉSEAU",
+      role: "Switching & Routage Avancé",
+      description:
+        "Design et configuration d'infrastructures Cisco L2/L3, agrégation LACP, VLANs, routage inter-VLAN et protocoles dynamiques.",
+      gradientClass: "member-bg-2",
+      shape: "triangle",
+    },
+    {
+      title: "AUTOMATISATION DEVNET",
+      role: "Python & Scripting Réseau",
+      description:
+        "Conception d'outils d'automatisation sur mesure pour le diagnostic, l'audit de configuration et la maintenance multi-équipements.",
+      gradientClass: "member-bg-3",
+      shape: "square",
+    },
+    {
+      title: "VIRTUALISATION & CLOUD",
+      role: "Homelab & Systèmes",
+      description:
+        "Administration de serveurs Proxmox VE, conteneurs Docker/LXC, reverse proxy Nginx, VPN Tailscale et services sécurisés.",
+      gradientClass: "member-bg-4",
+      shape: "ellipse",
+    },
+  ],
   experience: [
     {
       company: "Shinka IT",
@@ -65,155 +334,10 @@ export const SITE_CONTENT: SiteContent = {
         "Diplôme obtenu avec distinction. Formation approfondie en administration réseau, systèmes d'exploitation, protocoles réseau et cybersécurité.",
     },
   ],
-  projects: [
-    {
-      name: "Migration & HA Fortinet",
-      summary:
-        "Remplacement d'une infrastructure pare-feu Stormshield par un cluster FortiGate. Intégration avancée avec un cœur de réseau HP via l'agrégation de liens (LACP) pour assurer la redondance matérielle et optimiser la bande passante.",
-      image: "/proj-migr.jpg",
-    },
-    {
-      name: "Audit & Conformité Réseau",
-      summary:
-        "Développement de matrices de consolidation (tableurs/scripts) pour la vérification croisée des VLAN, des interfaces SVI et des règles de pare-feu par rapport au standard de référence A07 sur de multiples sites opérationnels.",
-      image: "/proj-auto.jpg",
-    },
-    {
-      name: "Moteur d'Échecs en Python",
-      summary:
-        "Conception d'un jeu d'échecs interactif jouable en terminal. Programmation de la représentation matricielle de l'échiquier et de la logique mathématique de déplacement des pièces pour explorer les concepts algorithmiques.",
-      image: "/proj-chess.jpg",
-    },
-    {
-      name: "Infra & Virtualisation (Proxmox VE)",
-      summary:
-        "Déploiement et administration d'un serveur physique (Homelab). Gestion avancée de la virtualisation via des machines virtuelles (VMs) ainsi que des conteneurs LXC et Docker.",
-      image: "/proj-scripts.jpg",
-    },
-    {
-      name: "Réseau & Sécurité",
-      summary:
-        "Configuration d'un reverse proxy (Nginx Proxy Manager) et sécurisation des accès distants via Tailscale. Gestion du DNS dynamique (DuckDNS) et filtrage réseau (AdGuard Home).",
-      image: "/proj-homelab.jpg",
-    },
-    {
-      name: "Simulations & Cybersécurité",
-      summary:
-        "Déploiement d'environnements de tests avec PNETLab pour la simulation de topologies réseau complexes (Cisco, Fortinet). Pratique régulière sur des plateformes (Hack The Box, OverTheWire).",
-      image: "/bxdr-og.jpg",
-    },
-  ],
-  about: {
-    description: `
-      Ingénieur Réseaux et Cybersécurité, certifié CCNA et Fortinet (NSE4/NSE6). J'ai acquis de solides compétences techniques grâce à ma formation avec distinction, mes expériences en déploiement d'infrastructures (FortiGate, Check Point) et l'automatisation en Python. Mon profil est complété par plusieurs années d'expérience polyvalente (Horeca/Logistique), forgeant ma gestion du stress et ma capacité d'adaptation.
-
-      **🌍 Langues :** Français (C2 - Maternelle) • Anglais (B2 - Professionnel) • Italien (B1)
-
-      *Des références professionnelles (Shinka IT) sont disponibles sur demande.*
-    `,
-    image: "/bxdr-logo.jpg",
-    skills: [
-      {
-        name: "Fortinet",
-        image: "https://cdn.simpleicons.org/fortinet/white",
-        skills: ["FortiGate", "FortiManager", "Firewalls", "VPN", "SD-WAN"]
-      },
-      {
-        name: "Check Point",
-        image: "https://www.google.com/s2/favicons?domain=checkpoint.com&sz=128",
-        skills: ["Security Gateway", "SmartConsole", "Threat Prevention", "VPN"]
-      },
-      {
-        name: "Cisco",
-        image: "https://cdn.simpleicons.org/cisco/white",
-        skills: ["Routing", "Switching", "IOS", "Network Security"]
-      },
-      {
-        name: "Stormshield",
-        image: "https://www.google.com/s2/favicons?domain=stormshield.com&sz=128",
-        skills: ["SNS", "Endpoint Security", "IPS/IDS", "Network Protection"]
-      },
-      {
-        name: "Proxmox",
-        image: "https://cdn.simpleicons.org/proxmox/white",
-        skills: ["Virtualization", "LXC", "KVM", "Cluster Management"]
-      },
-      {
-        name: "Python",
-        image: "https://cdn.simpleicons.org/python/white",
-        skills: ["Scripting", "Automation", "API REST", "Data Parsing"]
-      },
-      {
-        name: "PowerShell",
-        image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/powershell/powershell-original.svg",
-        skills: ["Windows Admin", "Active Directory", "Scripting", "Automation"]
-      },
-      {
-        name: "Bash",
-        image: "https://cdn.simpleicons.org/gnubash/white",
-        skills: ["Shell Scripting", "Linux Admin", "Cron", "Automation"]
-      },
-      {
-        name: "Linux",
-        image: "https://cdn.simpleicons.org/linux/white",
-        skills: ["Ubuntu", "Debian", "System Administration", "Security"]
-      },
-      {
-        name: "Windows",
-        image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg",
-        skills: ["Windows Server", "Active Directory", "Group Policies"]
-      },
-      {
-        name: "Azure",
-        image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg",
-        skills: ["Cloud Security", "Entra ID", "Networking", "IAM"]
-      }
-    ],
-    badges: [
-      {
-        name: "Fortinet FortiManager 7.6 Administrator",
-        image: "https://images.credly.com/images/b0885dbc-a96a-4d87-ba7a-d5339c543346/blob",
-        url: "https://www.credly.com/badges/805f73b4-4859-4104-8ced-661eb7f6911b/public_url",
-        skills: ["Administrative Domains", "Central Management", "Device Provisioning", "FortiGuard", "Object Management", "Policy Management", "Security Administration"]
-      },
-      {
-        name: "Fortinet NSE 6 Certified in Secure Networking",
-        image: "https://images.credly.com/images/f9429e70-1150-4cea-9e73-f0758b32624b/blob",
-        url: "https://www.credly.com/badges/2733fbce-c8ed-48ef-93e0-8dc3adf175c7/public_url",
-        skills: ["Administrative Domains", "Central Management", "Device Management", "Fortinet", "Log Data", "NAC", "Network Admin", "Network Security", "Policy Management", "Security Systems"]
-      },
-      {
-        name: "Cato Certified Associate",
-        image: "https://images.credly.com/images/6b7d1518-5326-4f6e-8931-c8b15d689655/blob",
-        url: "https://www.credly.com/badges/ccdb1f6a-dddc-4d5e-8428-4a62f257485c/public_url",
-        skills: ["SD-WAN", "SDP", "ZTNA"]
-      },
-      {
-        name: "Fortinet FortiOS 7.6 Administrator",
-        image: "https://images.credly.com/images/903ba5f9-3093-47d7-9c7c-83a4a95cb59a/blob",
-        url: "https://www.credly.com/badges/8a54c370-8293-4da0-8854-d04bbad86196/public_url",
-        skills: ["Antivirus", "Authentication", "Firewall", "FortiCNF", "FortiGate Cloud", "FortiOS", "FortiSASE", "High Availability", "IPS", "Logging", "NAT", "Routing", "VPN", "Web Filtering"]
-      },
-      {
-        name: "Fortinet NSE 4 Certified in FortiOS",
-        image: "https://images.credly.com/images/7413400c-4630-40ab-b8ac-200eaee90e58/blob",
-        url: "https://www.credly.com/badges/286a0d83-8708-4090-8902-0d366f3e9afe/public_url",
-        skills: ["Antivirus", "Authentication", "Firewalls", "FortiGate", "High Availability", "IPS", "Log Analysis", "Network Security", "Routing", "SASE", "SD-WAN", "VPN", "ZTNA", "Zero Trust"]
-      },
-      {
-        name: "Cisco Certified Network Associate",
-        image: "https://images.credly.com/images/683783d8-eaac-4c37-a14d-11bd8a36321d/ccna_600.png",
-        url: "https://www.credly.com/badges/05a0154c-a45a-450b-85ae-8d8a5e86b058/public_url",
-        skills: ["Access Connectivity", "IP Services", "Network Access", "Network Fundamentals", "Security Fundamentals", "Automation", "Routing", "IP", "Programmability"]
-      },
-      {
-        name: "CCNA: Enterprise Networking, Security & Automation",
-        image: "https://images.credly.com/images/0a6d331e-8abf-4272-a949-33f754569a76/CCNAENSA__1_.png",
-        url: "https://www.credly.com/badges/18ade446-a79f-4b7f-825a-ba4107524548/public_url",
-        skills: ["Dynamic Routing", "NAT", "Network Automation", "QoS", "Security Threat Mitigation", "SDN", "Virtualization", "WAN"]
-      }
-    ],
+  contact: {
+    eyebrow: "Travaillons ensemble",
+    titleLine1: "BÂTISSONS",
+    titleLine2: "ENSEMBLE",
+    email: "badr.achich.contact@gmail.com",
   },
 };
-
-// #5755ff

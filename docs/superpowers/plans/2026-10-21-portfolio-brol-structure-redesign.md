@@ -270,18 +270,18 @@ git commit -m "feat(hero): redesign hero with torn frame, particles and dynamic 
 **Fichiers affectés :**
 * Modifier : `src/components/Projects.astro`
 
-- [ ] **Étape 1 : Réécrire `src/components/Projects.astro`**
+- [x] **Étape 1 : Réécrire `src/components/Projects.astro`**
 Implémenter la section de projets :
 * En-tête sur fond crème avec sous-titre manuscrit (« Coup d'œil ») et titre géant en Bebas Neue (« NOS RÉALISATIONS »).
 * Empilement vertical des projets (`project-stack`) avec en-tête de métadonnées à 4 colonnes (Genre/Domaine, Format/Type, Technos, Année).
 * Zone visuelle large avec orbes d'arrière-plan, image de projet et titre monumental incrusté en bas à gauche en Bebas Neue.
 * Script client léger pour l'effet de focus au survol (diminution d'opacité à 50% des cartes non survolées).
 
-- [ ] **Étape 2 : Vérification de build**
+- [x] **Étape 2 : Vérification de build**
 Commande à exécuter : `pnpm run build`
 Résultat attendu : Build réussi sans erreur.
 
-- [ ] **Étape 3 : Commit Git**
+- [x] **Étape 3 : Commit Git**
 ```powershell
 git add src/components/Projects.astro
 git commit -m "feat(projects): redesign project stack with metadata grid and overlay titles"
@@ -294,17 +294,17 @@ git commit -m "feat(projects): redesign project stack with metadata grid and ove
 **Fichiers affectés :**
 * Créer : `src/components/Expertise.astro`
 
-- [ ] **Étape 1 : Créer `src/components/Expertise.astro`**
+- [x] **Étape 1 : Créer `src/components/Expertise.astro`**
 Adapter la section « Les Artistes » en 4 pôles d'expertise clés :
 * Grille responsive de 4 cartes (aspect-ratio 3/4) avec arrière-plans en dégradés distincts.
 * Rendu vectoriel SVG rotatif pour chaque forme (cercle avec tirets, polygone triangle, rectangle arrondi, ellipse avec tirets).
 * Panneau inférieur glissant au survol avec nom du pôle, rôle/spécialité et description succincte.
 
-- [ ] **Étape 2 : Vérification de build**
+- [x] **Étape 2 : Vérification de build**
 Commande à exécuter : `pnpm run build`
 Résultat attendu : Build réussi sans erreur.
 
-- [ ] **Étape 3 : Commit Git**
+- [x] **Étape 3 : Commit Git**
 ```powershell
 git add src/components/Expertise.astro
 git commit -m "feat(expertise): create 4 expertise poles with animated rotating svg avatars"
@@ -320,23 +320,23 @@ git commit -m "feat(expertise): create 4 expertise poles with animated rotating 
 * Créer : `src/components/Contact.astro`
 * Modifier : `src/components/Footer.astro`
 
-- [ ] **Étape 1 : Mettre à jour `src/components/About.astro`**
+- [x] **Étape 1 : Mettre à jour `src/components/About.astro`**
 Intégrer le grand titre d'accroche en Bebas Neue, le corps de texte bilingue, la grille de compteurs clés (5+, 3, 10+) et conserver les carrousels de badges (Tech Stack et Certifications).
 
-- [ ] **Étape 2 : Mettre à jour `src/components/Experience.astro`**
+- [x] **Étape 2 : Mettre à jour `src/components/Experience.astro`**
 Créer une timeline éditoriale avec dates en `Space Mono`, nom d'entreprise et postes en `Bebas Neue` et résumé des missions avec puces stylisées.
 
-- [ ] **Étape 3 : Créer `src/components/Contact.astro`**
+- [x] **Étape 3 : Créer `src/components/Contact.astro`**
 Créer la section Contact finale avec fond radial rougeoyant, sous-titre manuscrit (« Travaillons ensemble »), titre géant (« BÂTISSONS ENSEMBLE ») et lien mail interactif.
 
-- [ ] **Étape 4 : Mettre à jour `src/components/Footer.astro`**
+- [x] **Étape 4 : Mettre à jour `src/components/Footer.astro`**
 Harmoniser avec la grille 3 colonnes du template (Copyright, monogramme central, liens réseaux sociaux en Space Mono).
 
-- [ ] **Étape 5 : Vérification de build**
+- [x] **Étape 5 : Vérification de build**
 Commande à exécuter : `pnpm run build`
 Résultat attendu : Build réussi sans erreur.
 
-- [ ] **Étape 6 : Commit Git**
+- [x] **Étape 6 : Commit Git**
 ```powershell
 git add src/components/About.astro src/components/Experience.astro src/components/Contact.astro src/components/Footer.astro
 git commit -m "feat(sections): update about stats, experience timeline, contact section and footer"

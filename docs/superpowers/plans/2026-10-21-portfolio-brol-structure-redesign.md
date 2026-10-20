@@ -195,20 +195,20 @@ git commit -m "feat(content): enrich fr and en configs with ticker, expertise an
 * Créer : `src/components/Loader.astro`
 * Modifier : `src/layouts/Layout.astro`
 
-- [ ] **Étape 1 : Créer `src/components/Cursor.astro`**
+- [x] **Étape 1 : Créer `src/components/Cursor.astro`**
 Intégrer les éléments `#cursor` et `#cursor-ring` avec la logique d'animation fluide `requestAnimationFrame` et lerp à 0.12, avec gestion propre des survols de liens et des terminaux tactiles.
 
-- [ ] **Étape 2 : Créer `src/components/Loader.astro`**
+- [x] **Étape 2 : Créer `src/components/Loader.astro`**
 Intégrer l'écran de chargement avec le logo SVG monogramme animé (`drawPath`), la barre de progression temporelle et le texte « Initialisation des univers et protocoles ».
 
-- [ ] **Étape 3 : Intégrer `Cursor.astro`, `Loader.astro` et le filtre Noise SVG dans `src/layouts/Layout.astro`**
+- [x] **Étape 3 : Intégrer `Cursor.astro`, `Loader.astro` et le filtre Noise SVG dans `src/layouts/Layout.astro`**
 Placer le curseur, le loader et la couche de bruit dans le Layout, ainsi que l'intersection observer pour les animations `.reveal`.
 
-- [ ] **Étape 4 : Vérification de build**
+- [x] **Étape 4 : Vérification de build**
 Commande à exécuter : `pnpm run build`
 Résultat attendu : Build réussi sans erreur.
 
-- [ ] **Étape 5 : Commit Git**
+- [x] **Étape 5 : Commit Git**
 ```powershell
 git add src/components/Cursor.astro src/components/Loader.astro src/layouts/Layout.astro
 git commit -m "feat(ui): add custom cursor, animated svg loader, and noise overlay"
@@ -222,17 +222,17 @@ git commit -m "feat(ui): add custom cursor, animated svg loader, and noise overl
 * Créer : `src/components/Ticker.astro`
 * Modifier : `src/components/Header.astro`
 
-- [ ] **Étape 1 : Créer `src/components/Ticker.astro`**
+- [x] **Étape 1 : Créer `src/components/Ticker.astro`**
 Composant autonome recevant `items: TickerItem[]`, affichant la bande crème pleine largeur avec boucle d'animation continue fluide.
 
-- [ ] **Étape 2 : Adapter `src/components/Header.astro`**
+- [x] **Étape 2 : Adapter `src/components/Header.astro`**
 Adapter le style pour correspondre à la barre de navigation du template : structure en 3 zones (Menu hamburger à gauche, Monogramme textuel stylisé au centre, Liens d'ancrage et switcher de langue à droite en Space Mono), avec flou au scroll.
 
-- [ ] **Étape 3 : Vérification de build**
+- [x] **Étape 3 : Vérification de build**
 Commande à exécuter : `pnpm run build`
 Résultat attendu : Build réussi sans erreur.
 
-- [ ] **Étape 4 : Commit Git**
+- [x] **Étape 4 : Commit Git**
 ```powershell
 git add src/components/Ticker.astro src/components/Header.astro
 git commit -m "feat(ui): implement continuous ticker and update header styling"
@@ -245,7 +245,7 @@ git commit -m "feat(ui): implement continuous ticker and update header styling"
 **Fichiers affectés :**
 * Modifier : `src/components/Hero.astro`
 
-- [ ] **Étape 1 : Réécrire `src/components/Hero.astro`**
+- [x] **Étape 1 : Réécrire `src/components/Hero.astro`**
 Implémenter :
 * Le conteneur `.torn-frame` avec clip-path polygonal.
 * Le fond dynamique avec dégradé sombre et particules/orbes flottantes animées.
@@ -253,11 +253,11 @@ Implémenter :
 * L'étiquette mono en bas à gauche.
 * La punchline en typographie manuscrite `Permanent Marker` en dessous du cadre.
 
-- [ ] **Étape 2 : Vérification de build**
+- [x] **Étape 2 : Vérification de build**
 Commande à exécuter : `pnpm run build`
 Résultat attendu : Build réussi sans erreur.
 
-- [ ] **Étape 3 : Commit Git**
+- [x] **Étape 3 : Commit Git**
 ```powershell
 git add src/components/Hero.astro
 git commit -m "feat(hero): redesign hero with torn frame, particles and dynamic cta"

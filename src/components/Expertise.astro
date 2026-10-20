@@ -1,0 +1,306 @@
+---
+import type { ExpertiseItem } from "@types";
+
+interface Props {
+  items: ExpertiseItem[];
+  title?: string;
+  eyebrow?: string;
+}
+
+const { items, title, eyebrow } = Astro.props;
+
+// Determine language context
+const isEn =
+  title?.toLowerCase().includes("expertise") ||
+  (eyebrow && eyebrow.toLowerCase().includes("domain"));
+
+const defaultEyebrow = isEn
+  ? "Areas of Specialization"
+  : "Domaines d'intervention";
+const displayEyebrow = eyebrow || defaultEyebrow;
+
+const defaultTitleWord1 = isEn ? "CORE" : "NOS";
+const defaultTitleWord2 = isEn ? "EXPERTISES" : "EXPERTISES";
+
+let titleWord1 = defaultTitleWord1;
+let titleWord2 = defaultTitleWord2;
+
+if (title) {
+  const parts = title.trim().split(" ");
+  if (parts.length > 1) {
+    titleWord1 = parts[0];
+    titleWord2 = parts.slice(1).join(" ");
+  } else {
+    titleWord1 = isEn ? "CORE" : "NOS";
+    titleWord2 = parts[0];
+  }
+}
+---
+
+<section
+  id="expertise"
+  class="relative w-full border-t border-black/10 bg-[var(--cream)] px-6 py-16 text-[var(--black)] sm:py-24 md:px-12"
+>
+  <div class="mx-auto max-w-7xl">
+    <!-- Section Header -->
+    <div
+      class="mb-12 flex flex-col justify-between gap-6 sm:mb-16 md:flex-row md:items-end"
+    >
+      <div>
+        <p
+          class="section-eyebrow font-hand mb-2 -rotate-1 text-xl text-[var(--red)] sm:text-2xl"
+        >
+          {displayEyebrow}
+        </p>
+        <h2
+          class="section-mega-title font-display text-6xl leading-[0.88] tracking-tight sm:text-8xl md:text-9xl"
+        >
+          <span class="title-black">{titleWord1} </span>
+          <span class="title-red">{titleWord2}</span>
+        </h2>
+      </div>
+
+      <div
+        class="font-mono text-xs text-[var(--black)]/70 sm:text-sm md:max-w-xs md:text-right"
+      >
+        <span>
+          PILLIERS D'INGÉNIERIE // 04 PÔLES STRATÉGIQUES D'INFRASTRUCTURE
+        </span>
+      </div>
+    </div>
+
+    <!-- 4-Column Expertise Members Grid -->
+    <div
+      class="members-grid grid grid-cols-1 gap-6 sm:grid-cols-2 md:gap-8 lg:grid-cols-4"
+    >
+      {
+        items.map((item, index) => {
+          return (
+            <div
+              class={`member-card reveal group relative aspect-[3/4] w-full overflow-hidden rounded-2xl border border-black/10 shadow-xl transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl ${item.gradientClass || `member-bg-${index + 1}`}`}
+            >
+              <!-- Ambient Subtle Inner Glow -->
+              <div class="pointer-events-none absolute inset-0 bg-radial from-white/5 via-transparent to-transparent opacity-50" />
+
+              <!-- Card Index Tag in Space Mono -->
+              <div class="absolute top-4 left-4 z-20 font-mono text-xs font-bold tracking-widest text-white/40">
+                // 0{index + 1}
+              </div>
+
+              <!-- Upper Visual Area with Rotating SVG Avatar -->
+              <div class="relative flex h-[62%] w-full items-center justify-center p-6 transition-transform duration-500 group-hover:scale-95">
+                {item.shape === "circle" && (
+                  <svg
+                    viewBox="0 0 160 160"
+                    class="avatar-ring h-36 w-36 text-[var(--red)] drop-shadow-[0_0_25px_rgba(232,40,30,0.4)] sm:h-40 sm:w-40"
+                    fill="none"
+                    aria-label="Cercle géométrique rotatif"
+                  >
+                    <circle
+                      cx="80"
+                      cy="80"
+                      r="68"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-dasharray="6 6"
+                    />
+                    <circle
+                      cx="80"
+                      cy="80"
+                      r="50"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-dasharray="12 6"
+                      opacity="0.75"
+                    />
+                    <circle
+                      cx="80"
+                      cy="80"
+                      r="32"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-dasharray="4 4"
+                      opacity="0.5"
+                    />
+                    <circle cx="80" cy="80" r="5" fill="currentColor" />
+                    <line
+                      x1="80"
+                      y1="4"
+                      x2="80"
+                      y2="18"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                    <line
+                      x1="80"
+                      y1="142"
+                      x2="80"
+                      y2="156"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                    <line
+                      x1="4"
+                      y1="80"
+                      x2="18"
+                      y2="80"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                    <line
+                      x1="142"
+                      y1="80"
+                      x2="156"
+                      y2="80"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                  </svg>
+                )}
+
+                {item.shape === "triangle" && (
+                  <svg
+                    viewBox="0 0 160 160"
+                    class="avatar-ring h-36 w-36 text-blue-400 drop-shadow-[0_0_25px_rgba(59,130,246,0.4)] sm:h-40 sm:w-40"
+                    fill="none"
+                    aria-label="Triangle géométrique rotatif"
+                  >
+                    <polygon
+                      points="80,14 148,136 12,136"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-dasharray="8 6"
+                    />
+                    <polygon
+                      points="80,44 126,124 34,124"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-dasharray="5 5"
+                      opacity="0.7"
+                    />
+                    <polygon
+                      points="80,74 104,116 56,116"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-dasharray="3 3"
+                      opacity="0.5"
+                    />
+                    <circle cx="80" cy="98" r="5" fill="currentColor" />
+                  </svg>
+                )}
+
+                {item.shape === "square" && (
+                  <svg
+                    viewBox="0 0 160 160"
+                    class="avatar-ring h-36 w-36 text-emerald-400 drop-shadow-[0_0_25px_rgba(52,211,153,0.4)] sm:h-40 sm:w-40"
+                    fill="none"
+                    aria-label="Carré géométrique rotatif"
+                  >
+                    <rect
+                      x="20"
+                      y="20"
+                      width="120"
+                      height="120"
+                      rx="16"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-dasharray="10 6"
+                    />
+                    <rect
+                      x="42"
+                      y="42"
+                      width="76"
+                      height="76"
+                      rx="10"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-dasharray="6 4"
+                      opacity="0.7"
+                    />
+                    <rect
+                      x="62"
+                      y="62"
+                      width="36"
+                      height="36"
+                      rx="6"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-dasharray="3 3"
+                      opacity="0.5"
+                    />
+                    <circle cx="80" cy="80" r="5" fill="currentColor" />
+                  </svg>
+                )}
+
+                {item.shape === "ellipse" && (
+                  <svg
+                    viewBox="0 0 160 160"
+                    class="avatar-ring h-36 w-36 text-[var(--gold)] drop-shadow-[0_0_25px_rgba(200,169,110,0.4)] sm:h-40 sm:w-40"
+                    fill="none"
+                    aria-label="Ellipse géométrique rotative"
+                  >
+                    <ellipse
+                      cx="80"
+                      cy="80"
+                      rx="72"
+                      ry="34"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-dasharray="8 6"
+                    />
+                    <ellipse
+                      cx="80"
+                      cy="80"
+                      rx="34"
+                      ry="72"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-dasharray="6 4"
+                      opacity="0.75"
+                    />
+                    <circle
+                      cx="80"
+                      cy="80"
+                      r="16"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-dasharray="4 2"
+                      opacity="0.5"
+                    />
+                    <circle cx="80" cy="80" r="5" fill="currentColor" />
+                  </svg>
+                )}
+              </div>
+
+              <!-- Sliding Bottom Drawer .member-info -->
+              <div class="member-info absolute inset-x-0 bottom-0 z-20 flex flex-col justify-end bg-gradient-to-t from-black via-black/90 to-transparent p-5 transition-transform duration-500 ease-out sm:translate-y-16 sm:p-6 sm:group-hover:translate-y-0">
+                <span class="mb-1 block font-mono text-[10px] tracking-widest text-[var(--red)] uppercase">
+                  {item.role}
+                </span>
+
+                <h3 class="font-display text-2xl leading-tight tracking-wide text-white uppercase sm:text-3xl">
+                  {item.title}
+                </h3>
+
+                <p class="font-body mt-2 text-xs leading-relaxed text-[var(--off-white)]/80 opacity-100 transition-opacity duration-300 sm:text-sm sm:opacity-0 sm:delay-100 sm:group-hover:opacity-100">
+                  {item.description}
+                </p>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .avatar-ring {
+    animation: spinSlow 24s linear infinite;
+    transform-origin: center;
+  }
+
+  .member-card:hover .avatar-ring {
+    animation-duration: 12s;
+  }
+</style>

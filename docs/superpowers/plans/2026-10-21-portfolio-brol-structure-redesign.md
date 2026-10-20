@@ -37,7 +37,7 @@ git commit -m "style: configure design system fonts and global css variables"
 **Fichiers affectés :**
 * Modifier : `src/types/index.ts`
 
-- [ ] **Étape 1 : Ajouter les interfaces `TickerItem`, `StatItem`, `ExpertiseItem`, `ProjectMeta` et mettre à jour `ProjectProps` et `SiteContent`**
+- [x] **Étape 1 : Ajouter les interfaces `TickerItem`, `StatItem`, `ExpertiseItem`, `ProjectMeta` et mettre à jour `ProjectProps` et `SiteContent`**
 Mettre à jour `src/types/index.ts` avec la structure validée en spécification :
 ```typescript
 export interface SiteConfig extends HeaderProps {
@@ -146,11 +146,11 @@ export interface SiteContent {
 }
 ```
 
-- [ ] **Étape 2 : Vérification TypeScript**
+- [x] **Étape 2 : Vérification TypeScript**
 Commande à exécuter : `pnpm astro check`
 Résultat attendu : Détection des champs manquants dans `fr.ts` et `en.ts` (confirmation du bon fonctionnement du vérificateur de types).
 
-- [ ] **Étape 3 : Commit Git**
+- [x] **Étape 3 : Commit Git**
 ```powershell
 git add src/types/index.ts
 git commit -m "feat(types): expand data contracts for ticker, stats, expertise and project meta"
@@ -164,7 +164,7 @@ git commit -m "feat(types): expand data contracts for ticker, stats, expertise a
 * Modifier : `src/config/fr.ts`
 * Modifier : `src/config/en.ts`
 
-- [ ] **Étape 1 : Mettre à jour `src/config/fr.ts`**
+- [x] **Étape 1 : Mettre à jour `src/config/fr.ts`**
 Renseigner les sections :
 * `hero` : ajout de `tagline: "Sécuriser, automatiser, bâtir."`, `label: "Badr Achich · Ingénieur Réseaux & Cybersécurité · 2026"`, `ctaText: "EXPLORER / CV"`, `cvLink: "/cv.pdf"`.
 * `ticker` : 4 définitions techniques réseau/cyber (FORTINET, CISCO, DEVNET, TAILSCALE).
@@ -173,14 +173,14 @@ Renseigner les sections :
 * `expertise` : 4 pôles (Sécurité Périmétrique, Architecture Réseau, Automatisation DevNet, Virtualisation & Cloud) avec formes SVG associées.
 * `contact` : `eyebrow: "Travaillons ensemble"`, `titleLine1: "BÂTISSONS"`, `titleLine2: "ENSEMBLE"`, `email: "badr.achich.contact@gmail.com"`.
 
-- [ ] **Étape 2 : Mettre à jour `src/config/en.ts`**
+- [x] **Étape 2 : Mettre à jour `src/config/en.ts`**
 Traduire les données correspondantes en anglais dans `src/config/en.ts`.
 
-- [ ] **Étape 3 : Vérification TypeScript**
+- [x] **Étape 3 : Vérification TypeScript**
 Commande à exécuter : `pnpm astro check`
 Résultat attendu : 0 erreur, conformité totale avec les types.
 
-- [ ] **Étape 4 : Commit Git**
+- [x] **Étape 4 : Commit Git**
 ```powershell
 git add src/config/fr.ts src/config/en.ts
 git commit -m "feat(content): enrich fr and en configs with ticker, expertise and project metadata"

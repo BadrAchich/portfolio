@@ -1,17 +1,23 @@
 ---
 import { SITE_CONTENT, SITE_CONFIG } from "../../config/en";
 import Hero from "@components/Hero.astro";
-import Layout from "@layouts/Layout.astro";
-import Experience from "@components/Experience.astro";
+import Ticker from "@components/Ticker.astro";
 import Projects from "@components/Projects.astro";
 import About from "@components/About.astro";
+import Expertise from "@components/Expertise.astro";
+import Experience from "@components/Experience.astro";
+import Contact from "@components/Contact.astro";
+import Layout from "@layouts/Layout.astro";
 
 import "../../styles/global.css";
 ---
 
 <Layout config={SITE_CONFIG}>
-  <Hero {...SITE_CONTENT.hero} contactText="Contact Me" />
-  <Experience experience={SITE_CONTENT.experience} title="Experience" />
-  <Projects projects={SITE_CONTENT.projects} title="Projects" />
+  <Hero {...SITE_CONTENT.hero} />
+  <Ticker items={SITE_CONTENT.ticker} />
+  <Projects projects={SITE_CONTENT.projects} title="SELECTED WORKS" eyebrow="Portfolio Showcase" />
   <About {...SITE_CONTENT.about} name={SITE_CONTENT.hero.name} title="About Me" />
+  <Expertise items={SITE_CONTENT.expertise} title="CORE EXPERTISES" eyebrow="Areas of Specialization" />
+  <Experience experience={SITE_CONTENT.experience} title="EXPERIENCE" eyebrow="Career Timeline" />
+  <Contact {...SITE_CONTENT.contact} />
 </Layout>

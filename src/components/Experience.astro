@@ -1,42 +1,115 @@
 ---
-import Section from "./Section.astro";
 import type { ExperienceProps } from "@types";
 
 interface Props {
   experience: ExperienceProps[];
   title?: string;
+  eyebrow?: string;
 }
 
-const { experience, title = "Expérience" } = Astro.props;
+const { experience, title = "Expérience", eyebrow } = Astro.props;
+
+const isEn =
+  title.toLowerCase().includes("experience") ||
+  (eyebrow && eyebrow.toLowerCase().includes("career"));
+
+const defaultEyebrow = isEn ? "Career Journey" : "Parcours professionnel";
+const displayEyebrow = eyebrow || defaultEyebrow;
+
+const defaultTitleLine1 = isEn ? "CAREER" : "PARCOURS";
+const defaultTitleLine2 = isEn ? "EXPERIENCE" : "EXPÉRIENCE";
+
+let titleLine1 = defaultTitleLine1;
+let titleLine2 = defaultTitleLine2;
+
+if (title && title !== "Expérience" && title !== "Experience") {
+  const parts = title.trim().split(" ");
+  if (parts.length > 1) {
+    titleLine1 = parts[0];
+    titleLine2 = parts.slice(1).join(" ");
+  } else {
+    titleLine2 = parts[0];
+  }
+}
 ---
 
-<Section text={title} href="experience">
-  {
-    experience.map(({ company, position, startDate, endDate, summary }) => (
-      <div class="mb-10">
-        <h3 class="mb-1.5 font-serif text-2xl font-semibold text-white">
-          {company}
-        </h3>
-        <div class="flex flex-col items-start pb-5">
-          <h4 class="mb-0.5 font-serif text-2xl font-medium text-primary">
-            {position}
-          </h4>
-          <span class="pb-0.5 text-sm text-white/70">
-            {startDate} — {endDate}
-          </span>
-        </div>
-        {Array.isArray(summary) ? (
-          <ul class="list-none">
-            {summary.map((log) => (
-              <li class="relative mb-3 pl-8 text-base text-neutral before:absolute before:top-1 before:left-0 before:content-[url(/check.svg)]">
-                {log}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p class="text-base text-neutral">{summary}</p>
-        )}
+<section
+  id="experience"
+  class="relative w-full bg-[var(--black)] py-20 sm:py-28"
+>
+  <div class="mx-auto max-w-7xl px-6 md:px-12">
+    <!-- Header -->
+    <div
+      class="mb-16 flex flex-col justify-between gap-6 border-b border-white/10 pb-10 sm:mb-24 md:flex-row md:items-end"
+    >
+      <div>
+        <p
+          class="section-eyebrow font-hand mb-2 -rotate-1 text-xl text-[var(--red)] sm:text-2xl"
+        >
+          {displayEyebrow}
+        </p>
+        <h2
+          class="section-mega-title font-display text-6xl leading-[0.88] tracking-tight text-white uppercase sm:text-8xl md:text-9xl"
+        >
+          <span>{titleLine1} </span>
+          <span class="text-[var(--red)]">{titleLine2}</span>
+        </h2>
       </div>
-    ))
-  }
-</Section>
+      <div
+        class="font-mono text-xs text-[var(--off-white)]/60 sm:text-sm md:max-w-xs md:text-right"
+      >
+        <span>
+          HISTORIQUE PROFESSIONNEL // ÉTUDES, DÉPLOIEMENTS & ENGAGEMENT
+        </span>
+      </div>
+    </div>
+
+    <!-- Editorial Timeline -->
+    <div
+      class="relative ml-3 space-y-16 border-l border-white/15 pl-6 sm:ml-6 sm:space-y-20 sm:pl-10 md:ml-8 md:pl-12"
+    >
+      {
+        experience.map((item) => (
+          <article class="reveal group relative">
+            <!-- Timeline Marker on Spine -->
+            <div class="absolute -left-[31px] top-1.5 flex h-4 w-4 items-center justify-center rounded-full border-2 border-[var(--black)] bg-[var(--red)] shadow-[0_0_14px_rgba(232,40,30,0.8)] transition-transform duration-300 group-hover:scale-125 sm:-left-[47px] md:-left-[55px]">
+              <span class="h-1.5 w-1.5 rounded-full bg-white" />
+            </div>
+
+            <!-- Date in Space Mono -->
+            <div class="mb-2">
+              <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-xs tracking-wider text-[var(--red)] uppercase">
+                {item.startDate} — {item.endDate}
+              </span>
+            </div>
+
+            <!-- Company Name in Bebas Neue & Position in Space Grotesk -->
+            <div class="mb-4">
+              <h3 class="font-display text-3xl leading-tight tracking-wide text-white uppercase transition-colors duration-300 group-hover:text-[var(--red)] sm:text-5xl">
+                {item.company}
+              </h3>
+              <h4 class="font-body mt-1 text-lg font-medium tracking-normal text-[var(--lavender)] sm:text-xl">
+                {item.position}
+              </h4>
+            </div>
+
+            <!-- Missions / Accomplishments -->
+            {Array.isArray(item.summary) ? (
+              <ul class="font-body max-w-4xl space-y-3 text-sm text-[var(--off-white)]/85 sm:text-base">
+                {item.summary.map((point) => (
+                  <li class="relative pl-6 leading-relaxed before:absolute before:top-2 before:left-0 before:h-2 before:w-2 before:rounded-full before:border before:border-[var(--red)] before:bg-[var(--red)]/30">
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p class="font-body max-w-4xl text-sm leading-relaxed text-[var(--off-white)]/85 sm:text-base">
+                {item.summary}
+              </p>
+            )}
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

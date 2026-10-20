@@ -1,0 +1,81 @@
+---
+import type { ContactProps } from "@types";
+
+type Props = ContactProps;
+
+const {
+  eyebrow = "Travaillons ensemble",
+  titleLine1 = "BÂTISSONS",
+  titleLine2 = "ENSEMBLE",
+  email = "badr.achich.contact@gmail.com",
+} = Astro.props;
+---
+
+<section
+  id="contact"
+  class="relative flex min-h-[85vh] w-full flex-col items-center justify-center overflow-hidden bg-[var(--black)] px-6 py-28 text-center sm:py-36 md:px-12"
+>
+  <!-- Background Glowing Red Radial Halo -->
+  <div
+    class="pointer-events-none absolute top-1/2 left-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,_rgba(232,40,30,0.22)_0%,_rgba(232,40,30,0.06)_45%,_transparent_70%)] blur-[90px] sm:h-[750px] sm:w-[750px] sm:blur-[120px]"
+    aria-hidden="true"
+  >
+  </div>
+
+  <!-- Technical Grid Background Accent -->
+  <div
+    class="pointer-events-none absolute inset-0 opacity-[0.04]"
+    style="background-image: linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px); background-size: 48px 48px;"
+  >
+  </div>
+
+  <div
+    class="reveal relative z-10 mx-auto flex max-w-5xl flex-col items-center"
+  >
+    <!-- Status Badge -->
+    <div
+      class="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 font-mono text-[10px] tracking-widest text-[var(--off-white)]/70 uppercase backdrop-blur-md sm:text-xs"
+    >
+      <span class="h-2 w-2 animate-pulse rounded-full bg-emerald-400"></span>
+      <span>DISPONIBLE POUR MISSIONS & PROJETS // 2026</span>
+    </div>
+
+    <!-- Hand-written Eyebrow in Permanent Marker -->
+    <p
+      class="contact-eyebrow font-hand mb-4 -rotate-2 text-2xl text-[var(--cream)] select-none sm:text-3xl md:text-4xl"
+    >
+      “{eyebrow}”
+    </p>
+
+    <!-- Monumental Bebas Neue Mega Title -->
+    <h2
+      class="contact-title font-display mb-10 text-7xl leading-[0.84] tracking-tight uppercase select-none sm:mb-12 sm:text-9xl md:text-[11rem]"
+    >
+      <span class="block text-white">{titleLine1}</span>
+      <span class="block text-[var(--red)]">{titleLine2}</span>
+    </h2>
+
+    <!-- Interactive Giant Email Link in Space Mono -->
+    <div class="group relative inline-block">
+      <a
+        href={`mailto:${email}`}
+        class="contact-email relative inline-flex items-center gap-3 pb-2 font-mono text-xl text-[var(--off-white)] transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-[var(--red)] after:transition-all hover:text-[var(--red)] sm:text-3xl md:text-4xl"
+        aria-label={`Envoyer un email à ${email}`}
+      >
+        <span>{email}</span>
+        <span
+          class="inline-block transition-transform duration-300 group-hover:-translate-y-1.5 group-hover:translate-x-1.5"
+        >
+          ↗
+        </span>
+      </a>
+    </div>
+
+    <!-- Subtitle Note -->
+    <p
+      class="mt-8 font-mono text-xs tracking-wider text-[var(--off-white)]/50 sm:text-sm"
+    >
+      RÉSEAUX · CYBERSÉCURITÉ · AUTOMATISATION DEVNET · INFRASTRUCTURE
+    </p>
+  </div>
+</section>

@@ -14,17 +14,17 @@
 * Modifier : `src/layouts/Layout.astro`
 * Modifier : `src/styles/global.css`
 
-- [ ] **Étape 1 : Importer les polices Google Fonts dans `Layout.astro`**
+- [x] **Étape 1 : Importer les polices Google Fonts dans `Layout.astro`**
 Ajouter les liens `preconnect` et la feuille de styles Google Fonts (`Bebas Neue`, `Space Grotesk`, `Space Mono`, `Permanent Marker`) dans la balise `<head>` de `src/layouts/Layout.astro`.
 
-- [ ] **Étape 2 : Déclarer les variables CSS et classes utilitaires dans `src/styles/global.css`**
+- [x] **Étape 2 : Déclarer les variables CSS et classes utilitaires dans `src/styles/global.css`**
 Définir les variables de thème (`--font-display`, `--font-hand`, `--font-body`, `--font-mono`, `--black: #0a0a0a`, `--cream: #f0ebe0`, `--off-white: #e8e3d8`, `--red: #e8281e`, etc.), la règle pour `torn-frame` avec le polygone exact du clip-path, les animations de rotation continue (`spinSlow`), de pulse (`pulseRing`), d'orbes flottantes (`orbFloat`, `float`) et de ticker (`ticker`).
 
-- [ ] **Étape 3 : Lancer la vérification de build**
+- [x] **Étape 3 : Lancer la vérification de build**
 Commande à exécuter : `pnpm run build`
 Résultat attendu : Build réussi sans erreur CSS ou de parsing.
 
-- [ ] **Étape 4 : Commit Git**
+- [x] **Étape 4 : Commit Git**
 ```powershell
 git add src/layouts/Layout.astro src/styles/global.css
 git commit -m "style: configure design system fonts and global css variables"

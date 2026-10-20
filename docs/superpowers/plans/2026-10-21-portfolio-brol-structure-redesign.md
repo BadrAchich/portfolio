@@ -350,7 +350,7 @@ git commit -m "feat(sections): update about stats, experience timeline, contact 
 * Modifier : `src/pages/index.astro`
 * Modifier : `src/pages/en/index.astro`
 
-- [ ] **Étape 1 : Assembler les composants dans `src/pages/index.astro`**
+- [x] **Étape 1 : Assembler les composants dans `src/pages/index.astro`**
 Agencer :
 1. `Hero`
 2. `Ticker`
@@ -360,14 +360,14 @@ Agencer :
 6. `Experience`
 7. `Contact`
 
-- [ ] **Étape 2 : Assembler les composants dans `src/pages/en/index.astro`**
+- [x] **Étape 2 : Assembler les composants dans `src/pages/en/index.astro`**
 Agencer de manière identique la version anglaise avec `SITE_CONTENT` et `SITE_CONFIG` anglais.
 
-- [ ] **Étape 3 : Vérification complète de compilation et vérification de type**
+- [x] **Étape 3 : Vérification complète de compilation et vérification de type**
 Commande à exécuter : `pnpm run build`
 Résultat attendu : `2 page(s) built` générées sans avertissement ni erreur TypeScript.
 
-- [ ] **Étape 4 : Commit Git**
+- [x] **Étape 4 : Commit Git**
 ```powershell
 git add src/pages/index.astro src/pages/en/index.astro
 git commit -m "feat(pages): assemble new portfolio structure on fr and en pages"

@@ -1,0 +1,119 @@
+---
+// Animated SVG Monogram Loader with progress bar and protocol initialization status
+---
+
+<div id="loader" class="fixed inset-0 z-[9990] flex flex-col items-center justify-center bg-[#0a0a0a]" aria-live="polite" aria-busy="true">
+  <div class="relative flex flex-col items-center">
+    <!-- Stylized Monogram SVG (BXDR / Cybersecurity Emblem) -->
+    <svg
+      class="h-28 w-28 sm:h-36 sm:w-36"
+      viewBox="0 0 160 160"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <!-- Outer hexagonal circuit shield -->
+      <polygon
+        points="80,12 148,46 148,114 80,148 12,114 12,46"
+        stroke="rgba(232, 227, 216, 0.25)"
+        stroke-width="1.5"
+        stroke-dasharray="480"
+        stroke-dashoffset="480"
+        class="draw-frame"
+      />
+      <!-- Inner node connections -->
+      <circle cx="80" cy="12" r="3" fill="var(--red)" />
+      <circle cx="148" cy="46" r="3" fill="var(--off-white)" />
+      <circle cx="148" cy="114" r="3" fill="var(--off-white)" />
+      <circle cx="80" cy="148" r="3" fill="var(--red)" />
+      <circle cx="12" cy="114" r="3" fill="var(--off-white)" />
+      <circle cx="12" cy="46" r="3" fill="var(--off-white)" />
+
+      <!-- Monogram 'B' architectural spine & loops -->
+      <path
+        d="M52 42 L52 118 M52 42 L84 42 C98 42 104 56 90 70 C106 84 100 118 52 118 M52 70 L90 70"
+        stroke="var(--off-white)"
+        stroke-width="3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-dasharray="380"
+        stroke-dashoffset="380"
+        class="draw-path"
+      />
+      <!-- Dynamic 'X' / security crosshair accent -->
+      <path
+        d="M102 46 L132 114 M132 46 L102 114"
+        stroke="var(--red)"
+        stroke-width="3"
+        stroke-linecap="round"
+        stroke-dasharray="240"
+        stroke-dashoffset="240"
+        class="draw-accent"
+      />
+    </svg>
+
+    <!-- Progress track and moving bar -->
+    <div class="relative mt-8 mb-4 h-[2px] w-52 overflow-hidden bg-white/10 sm:w-64">
+      <div class="loader-progress absolute top-0 bottom-0 w-full bg-[var(--red)]"></div>
+    </div>
+
+    <!-- Status text in Space Mono -->
+    <p class="font-mono text-[10px] tracking-[0.25em] text-[var(--off-white)]/70 uppercase sm:text-xs">
+      Initialisation des systèmes & protocoles
+    </p>
+  </div>
+</div>
+
+<style>
+  #loader {
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.65s;
+    will-change: opacity, visibility;
+  }
+
+  #loader.loaded {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .draw-frame {
+    animation: drawPath 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .draw-path {
+    animation: drawPath 2s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+  }
+
+  .draw-accent {
+    animation: drawPath 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
+  }
+
+  .loader-progress {
+    left: -100%;
+    animation: loaderProgress 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+</style>
+
+<script>
+  const hideLoader = () => {
+    const loader = document.getElementById("loader");
+    if (loader && !loader.classList.contains("loaded")) {
+      loader.classList.add("loaded");
+      loader.setAttribute("aria-busy", "false");
+      setTimeout(() => {
+        loader.style.display = "none";
+      }, 700);
+    }
+  };
+
+  if (document.readyState === "complete") {
+    setTimeout(hideLoader, 1100);
+  } else {
+    window.addEventListener("load", () => {
+      setTimeout(hideLoader, 600);
+    });
+  }
+
+  // Fallback safety timeout at 2.8s
+  setTimeout(hideLoader, 2800);
+</script>

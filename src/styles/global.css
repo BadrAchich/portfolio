@@ -170,3 +170,29 @@
     left: 0;
   }
 }
+
+/* Scroll reveal utility */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Native cursor suppression on desktop with hover capability */
+@media (hover: hover) and (pointer: fine) {
+  body,
+  a,
+  button,
+  [role="button"],
+  input,
+  textarea,
+  select {
+    cursor: none;
+  }
+}

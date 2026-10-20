@@ -1,8 +1,10 @@
 ---
 import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import Cursor from "@components/Cursor.astro";
+import Loader from "@components/Loader.astro";
 import { Font } from "astro:assets";
 import type { SiteConfig } from "../types";
-import Footer from "@components/Footer.astro";
 
 export interface Props {
   config: SiteConfig;
@@ -57,25 +59,63 @@ const ogImgUrl = canonicalURL + socialImage;
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={ogImgUrl} />
   </head>
-  <body class="bg-black font-sans">
+  <body class="bg-[var(--black)] text-[var(--off-white)] font-body overflow-x-hidden selection:bg-[var(--red)] selection:text-white antialiased">
+    <!-- Custom dual-ring cursor -->
+    <Cursor />
+
+    <!-- Animated SVG monogram preloader -->
+    <Loader />
+
+    <!-- Analog fractal noise overlay -->
+    <div class="pointer-events-none fixed inset-0 z-[9980] opacity-[0.035]" aria-hidden="true">
+      <svg class="h-full w-full" xmlns="http://www.w3.org/2000/svg">
+        <filter id="noiseFilter">
+          <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch" />
+        </filter>
+        <rect width="100%" height="100%" filter="url(#noiseFilter)" />
+      </svg>
+    </div>
+
     <Header siteLogo={siteLogo} navLinks={navLinks} />
-    <main class="mx-auto max-w-3xl px-5">
+    <main class="w-full overflow-x-hidden">
       <slot />
     </main>
     <Footer author={author} socialLinks={socialLinks} />
-    <script>
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.remove('opacity-0', 'translate-y-12');
-            entry.target.classList.add('opacity-100', 'translate-y-0');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.05, rootMargin: '0px 0px -50px 0px' });
 
-      document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
-        observer.observe(el);
+    <script>
+      // Intersection Observer for .reveal animations
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+      );
+
+      document.querySelectorAll(".reveal").forEach((el) => {
+        revealObserver.observe(el);
+      });
+
+      // Legacy observer for .reveal-on-scroll
+      const legacyObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.remove("opacity-0", "translate-y-12");
+              entry.target.classList.add("opacity-100", "translate-y-0");
+              legacyObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.05, rootMargin: "0px 0px -50px 0px" }
+      );
+
+      document.querySelectorAll(".reveal-on-scroll").forEach((el) => {
+        legacyObserver.observe(el);
       });
     </script>
   </body>

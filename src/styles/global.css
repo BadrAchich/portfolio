@@ -1,13 +1,39 @@
 @import "tailwindcss";
 
+:root {
+  --black: #0a0a0a;
+  --off-white: #e8e3d8;
+  --cream: #f0ebe0;
+  --red: #e8281e;
+  --pink: #ff7eb3;
+  --lavender: #a78bff;
+  --gold: #c8a96e;
+
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-hand: 'Permanent Marker', cursive;
+  --font-body: 'Space Grotesk', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+}
+
 @theme inline {
   --font-sans: var(--font-be-vietnam-pro);
   --font-serif: var(--font-gabarito);
+  --font-display: var(--font-display);
+  --font-hand: var(--font-hand);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
 
   --color-primary: #2563eb;
   --color-neutral: #94a3b8;
   --color-white: #e2e8f0;
   --color-black: #0e141b;
+  --color-brol-black: var(--black);
+  --color-off-white: var(--off-white);
+  --color-cream: var(--cream);
+  --color-red: var(--red);
+  --color-pink: var(--pink);
+  --color-lavender: var(--lavender);
+  --color-gold: var(--gold);
 
   --text-xs: 0.875rem;
   --text-xs--line-height: 1.125rem;
@@ -49,5 +75,98 @@
     100% {
       transform: translateY(0);
     }
+  }
+}
+
+/* Torn Frame polygonal clip-path */
+.torn-frame {
+  clip-path: polygon(
+    0% 2%, 3% 0%, 8% 1.5%, 15% 0.5%, 22% 2%, 30% 0%, 38% 1%, 45% 0.3%, 52% 1.5%, 60% 0%, 67% 1%, 75% 0.5%, 83% 2%, 90% 0.2%, 97% 1.5%, 100% 0.5%,
+    100% 97%, 98% 100%, 93% 98.5%, 85% 100%, 78% 98%, 70% 100%, 62% 99%, 55% 100%, 48% 98.5%, 40% 100%, 32% 99%, 25% 100%, 17% 98%, 10% 100%, 3% 98.5%, 0% 100%
+  );
+}
+
+/* Title color variants */
+.title-red {
+  color: var(--red);
+}
+.title-black {
+  color: var(--black);
+}
+.title-gold {
+  color: var(--gold);
+}
+.title-pink {
+  color: var(--pink);
+}
+.title-lavender {
+  color: var(--lavender);
+}
+
+/* Visual gradient backgrounds */
+.visual-brol-1 {
+  background: linear-gradient(135deg, #0d0d1a 0%, #1a0d2e 30%, #2d1b69 60%, #12122a 100%);
+}
+.visual-brol-2 {
+  background: linear-gradient(135deg, #0a1628 0%, #1e3a5f 40%, #0a2e4a 70%, #050f1c 100%);
+}
+.visual-brol-3 {
+  background: linear-gradient(135deg, #1a0a0a 0%, #3d0d0d 30%, #6b1414 50%, #1a0505 100%);
+}
+
+/* Keyframe animations */
+@keyframes pulseRing {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+
+@keyframes orbFloat {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(var(--tx, 30px), var(--ty, -40px)) scale(1.15);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(var(--tx, 20px), var(--ty, -30px)) scale(1.2);
+  }
+}
+
+@keyframes spinSlow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes drawPath {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes loaderProgress {
+  to {
+    left: 0;
   }
 }

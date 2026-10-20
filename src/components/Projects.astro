@@ -1,45 +1,259 @@
 ---
-import Section from "./Section.astro";
-import { Image } from "astro:assets";
 import type { ProjectProps } from "@types";
 
 interface Props {
   projects: ProjectProps[];
   title?: string;
+  eyebrow?: string;
 }
 
-const { projects, title = "Projets" } = Astro.props;
+const { projects, title, eyebrow } = Astro.props;
+
+// Determine if we are in an English context or French context
+const isEn = title === "Projects" || (eyebrow && eyebrow.toLowerCase().includes("work"));
+
+const defaultEyebrow = isEn ? "Selected Works" : "Coup d'œil";
+const displayEyebrow = eyebrow || defaultEyebrow;
+
+// Mega title breakdown
+const defaultTitleWord1 = isEn ? "FEATURED" : "NOS";
+const defaultTitleWord2 = isEn ? "PROJECTS" : "RÉALISATIONS";
+
+let titleWord1 = defaultTitleWord1;
+let titleWord2 = defaultTitleWord2;
+
+if (title) {
+  const parts = title.trim().split(" ");
+  if (parts.length > 1) {
+    titleWord1 = parts[0];
+    titleWord2 = parts.slice(1).join(" ");
+  } else {
+    titleWord1 = isEn ? "SELECTED" : "NOS";
+    titleWord2 = parts[0];
+  }
+}
+
+const labels = {
+  domain: isEn ? "DOMAIN" : "DOMAINE",
+  format: isEn ? "FORMAT" : "FORMAT",
+  tools: isEn ? "TOOLS" : "OUTILS",
+  year: isEn ? "YEAR" : "ANNÉE",
+  demo: isEn ? "DEMO" : "DÉMO",
+  source: isEn ? "SOURCE" : "SOURCE",
+  badge: isEn ? "INFRASTRUCTURE & CODE ARCHIVES" : "ARCHIVES & INFRASTRUCTURES RÉSEAU",
+};
 ---
 
-<Section text={title} href="projects">
-  {
-    projects.map(({ name, summary, image = "/bxdr-og.jpg" }, index) => {
-      const top = 98 + index * 40;
-      return (
-        <div
-          style={`top: ${top}px;`}
-          class="sticky mb-12 rounded-2xl border border-neutral/20 bg-black"
+<section id="projects" class="relative w-full">
+  <!-- Section Header on Cream Background -->
+  <div
+    class="w-full border-y border-black/10 bg-[var(--cream)] px-6 py-16 text-[var(--black)] sm:py-24 md:px-12"
+  >
+    <div
+      class="mx-auto flex max-w-7xl flex-col justify-between gap-6 md:flex-row md:items-end"
+    >
+      <div>
+        <p
+          class="section-eyebrow font-hand mb-2 -rotate-1 text-xl text-[var(--red)] sm:text-2xl"
         >
-          <div class="bg-difu relative z-1 grid h-145 w-full grid-rows-2 rounded-2xl bg-[#1c232d]/85 before:absolute before:inset-0 before:z-[-1] before:rounded-2xl before:bg-[url(/raja.png)] before:bg-size-[128px] before:bg-repeat before:opacity-5 before:content-[''] sm:grid-cols-2 sm:grid-rows-1 md:h-96">
-            <div class="px-6 pt-12">
-              <h3 class="mb-5 font-serif text-3xl font-medium text-primary">
-                {name}
-              </h3>
-              <p class="text-base text-neutral">{summary}</p>
+          {displayEyebrow}
+        </p>
+        <h2
+          class="section-mega-title font-display text-6xl leading-[0.88] tracking-tight sm:text-8xl md:text-9xl"
+        >
+          <span class="title-black">{titleWord1} </span>
+          <span class="title-red">{titleWord2}</span>
+        </h2>
+      </div>
+      <div
+        class="font-mono text-xs text-[var(--black)]/70 sm:text-sm md:max-w-xs md:text-right"
+      >
+        <span>
+          {labels.badge} // {projects.length}{" "}
+          {isEn ? "PROJECTS DOCUMENTED" : "PROJETS RÉPERTORIÉS"}
+        </span>
+      </div>
+    </div>
+  </div>
 
-            </div>
-            <div class="flex items-end justify-end overflow-hidden">
-              <Image
-                class="h-full w-[95%] rounded-ss-xl rounded-ee-2xl object-cover object-center sm:h-[85%] sm:w-full"
-                src={image}
-                alt={name}
-                width="736"
-                height="483"
-              />
-            </div>
-          </div>
-        </div>
-      );
-    })
+  <!-- Vertical Project Stack -->
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 md:px-8">
+    <div class="project-stack flex flex-col gap-12 sm:gap-16">
+      {
+        projects.map((project, index) => {
+          const visualClass =
+            project.visualClass || `visual-brol-${(index % 3) + 1}`;
+          const titleColorClass = project.titleColorClass || "title-lavender";
+
+          return (
+            <article class="project-item reveal group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#0d0e12] transition-all duration-500 hover:border-white/25 hover:shadow-[0_25px_60px_rgba(0,0,0,0.8)]">
+              <!-- Upper 4-cell Metadata Grid -->
+              <div class="project-meta grid grid-cols-2 divide-x divide-y divide-white/10 border-b border-white/10 bg-black/40 backdrop-blur-sm md:grid-cols-4 md:divide-y-0">
+                <div class="p-4 sm:p-5">
+                  <span class="mb-1 block font-mono text-[10px] tracking-widest text-[var(--off-white)]/50 uppercase">
+                    {labels.domain}
+                  </span>
+                  <span class="line-clamp-1 font-mono text-xs font-semibold text-[var(--off-white)] sm:text-sm">
+                    {project.meta.domain}
+                  </span>
+                </div>
+                <div class="p-4 sm:p-5">
+                  <span class="mb-1 block font-mono text-[10px] tracking-widest text-[var(--off-white)]/50 uppercase">
+                    {labels.format}
+                  </span>
+                  <span class="line-clamp-1 font-mono text-xs text-[var(--off-white)] sm:text-sm">
+                    {project.meta.format}
+                  </span>
+                </div>
+                <div class="p-4 sm:p-5">
+                  <span class="mb-1 block font-mono text-[10px] tracking-widest text-[var(--off-white)]/50 uppercase">
+                    {labels.tools}
+                  </span>
+                  <span class="line-clamp-1 font-mono text-xs text-[var(--off-white)] sm:text-sm">
+                    {project.meta.tools}
+                  </span>
+                </div>
+                <div class="p-4 sm:p-5">
+                  <span class="mb-1 block font-mono text-[10px] tracking-widest text-[var(--off-white)]/50 uppercase">
+                    {labels.year}
+                  </span>
+                  <span class="font-display text-lg tracking-wider text-[var(--off-white)] sm:text-xl">
+                    {project.meta.year}
+                  </span>
+                </div>
+              </div>
+
+              <!-- Large Visual Canvas -->
+              <div class="project-visual relative aspect-[16/10] w-full overflow-hidden sm:aspect-[21/9] md:aspect-[2.4/1]">
+                <div
+                  class={`project-visual-inner absolute inset-0 ${visualClass}`}
+                >
+                  <!-- Animated Ambient Orbs -->
+                  <div class="project-orbs pointer-events-none absolute inset-0 overflow-hidden">
+                    <div
+                      class="orb orb-1 absolute -top-12 -left-12 h-64 w-64 rounded-full bg-[var(--red)]/20 blur-[80px]"
+                      style="--tx: 30px; --ty: -20px;"
+                    />
+                    <div
+                      class="orb orb-2 absolute -bottom-16 -right-16 h-72 w-72 rounded-full bg-[var(--lavender)]/20 blur-[90px]"
+                      style="--tx: -25px; --ty: 25px;"
+                    />
+                    <div
+                      class="orb orb-3 absolute top-1/3 right-1/4 h-56 w-56 rounded-full bg-blue-500/15 blur-[70px]"
+                      style="--tx: 20px; --ty: -15px;"
+                    />
+                  </div>
+
+                  <!-- Optional Background Image with Overlay -->
+                  {project.image && (
+                    <img
+                      src={project.image}
+                      alt={project.name}
+                      class="absolute inset-0 h-full w-full object-cover object-center opacity-30 mix-blend-luminosity filter transition-transform duration-700 ease-out group-hover:scale-105 group-hover:opacity-40"
+                      loading="lazy"
+                    />
+                  )}
+
+                  <!-- Dark gradient vignette for readability -->
+                  <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent" />
+
+                  <!-- Monumental Overlay Title in Bebas Neue -->
+                  <div class="absolute bottom-6 left-6 z-10 max-w-[90%] sm:bottom-8 sm:left-8 md:bottom-10 md:left-10">
+                    <h3
+                      class={`project-title-overlay font-display text-4xl leading-none tracking-tight uppercase drop-shadow-2xl sm:text-6xl md:text-8xl ${titleColorClass}`}
+                    >
+                      {project.name}
+                    </h3>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Lower Drawer / Summary & Links -->
+              <div class="flex flex-col justify-between gap-6 border-t border-white/5 bg-black/60 p-6 sm:p-8 md:flex-row md:items-center">
+                <p class="font-body max-w-3xl text-sm leading-relaxed text-[var(--off-white)]/80 sm:text-base">
+                  {project.summary}
+                </p>
+
+                {(project.linkPreview || project.linkSource) && (
+                  <div class="flex shrink-0 items-center gap-3 font-mono text-xs">
+                    {project.linkPreview && (
+                      <a
+                        href={project.linkPreview}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-4 py-2 text-white transition-colors duration-200 hover:bg-[var(--red)]"
+                      >
+                        <span>{labels.demo}</span>
+                        <span>↗</span>
+                      </a>
+                    )}
+                    {project.linkSource && (
+                      <a
+                        href={project.linkSource}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center gap-1.5 rounded-full border border-white/20 px-4 py-2 text-white/80 transition-colors duration-200 hover:border-white hover:text-white"
+                      >
+                        <span>{labels.source}</span>
+                        <span>↗</span>
+                      </a>
+                    )}
+                  </div>
+                )}
+              </div>
+            </article>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .project-item {
+    transition:
+      opacity 0.4s ease,
+      filter 0.4s ease,
+      border-color 0.4s ease,
+      transform 0.4s ease;
   }
-</Section>
+
+  .orb-1 {
+    animation: orbFloat 11s ease-in-out infinite alternate;
+  }
+  .orb-2 {
+    animation: orbFloat 13s ease-in-out infinite alternate;
+    animation-delay: -4s;
+  }
+  .orb-3 {
+    animation: orbFloat 9s ease-in-out infinite alternate;
+    animation-delay: -2s;
+  }
+</style>
+
+<script>
+  // Client-side hover focus effect for .project-stack
+  const projectItems = document.querySelectorAll<HTMLElement>(
+    ".project-stack .project-item"
+  );
+
+  if (projectItems.length > 0) {
+    projectItems.forEach((item) => {
+      item.addEventListener("mouseenter", () => {
+        projectItems.forEach((other) => {
+          if (other !== item) {
+            other.style.opacity = "0.45";
+            other.style.filter = "grayscale(30%)";
+          }
+        });
+      });
+
+      item.addEventListener("mouseleave", () => {
+        projectItems.forEach((other) => {
+          other.style.opacity = "1";
+          other.style.filter = "none";
+        });
+      });
+    });
+  }
+</script>

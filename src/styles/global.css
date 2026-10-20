@@ -114,6 +114,20 @@
   background: linear-gradient(135deg, #1a0a0a 0%, #3d0d0d 30%, #6b1414 50%, #1a0505 100%);
 }
 
+/* Member / Expertise card gradient backgrounds */
+.member-bg-1 {
+  background: radial-gradient(circle at 50% 30%, #2e0e14 0%, #17070a 50%, #090304 100%);
+}
+.member-bg-2 {
+  background: radial-gradient(circle at 50% 30%, #0d2238 0%, #071320 50%, #03080e 100%);
+}
+.member-bg-3 {
+  background: radial-gradient(circle at 50% 30%, #14281e 0%, #0a1711 50%, #040a07 100%);
+}
+.member-bg-4 {
+  background: radial-gradient(circle at 50% 30%, #281e0e 0%, #181107 50%, #090602 100%);
+}
+
 /* Keyframe animations */
 @keyframes pulseRing {
   0%, 100% {

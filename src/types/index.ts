@@ -8,19 +8,42 @@ export interface SiteConfig extends HeaderProps {
   canonicalURL?: string;
 }
 
-export interface SiteContent {
-  hero: HeroProps;
-  experience: ExperienceProps[];
-  projects: ProjectProps[];
-  about: AboutProps;
+export interface TickerItem {
+  word: string;
+  pos: string;
+  phon: string;
+  def: string;
 }
 
-export interface HeroProps {
+export interface StatItem {
+  value: string;
+  label: string;
+}
+
+export interface ExpertiseItem {
+  title: string;
+  role: string;
+  description: string;
+  gradientClass: string;
+  shape: 'circle' | 'triangle' | 'square' | 'ellipse';
+}
+
+export interface ProjectMeta {
+  domain: string;
+  format: string;
+  tools: string;
+  year: string;
+}
+
+export interface ProjectProps {
   name: string;
-  specialty: string;
   summary: string;
-  email: string;
-  downloadCvText?: string;
+  image?: string;
+  titleColorClass?: string;
+  visualClass?: string;
+  meta: ProjectMeta;
+  linkPreview?: string;
+  linkSource?: string;
 }
 
 export interface ExperienceProps {
@@ -29,14 +52,6 @@ export interface ExperienceProps {
   startDate: string;
   endDate: string;
   summary: string | string[];
-}
-
-export interface ProjectProps {
-  name: string;
-  summary: string;
-  image: string;
-  linkPreview?: string;
-  linkSource?: string;
 }
 
 export interface BadgeProps {
@@ -49,6 +64,10 @@ export interface BadgeProps {
 export interface AboutProps {
   description: string;
   image: string;
+  headline?: string;
+  accentWord?: string;
+  subheadline?: string;
+  stats?: StatItem[];
   skills?: BadgeProps[];
   certifications?: string[];
   badges?: BadgeProps[];
@@ -57,4 +76,33 @@ export interface AboutProps {
 export interface HeaderProps {
   siteLogo: string;
   navLinks: { text: string; href: string }[];
+}
+
+export interface ContactProps {
+  eyebrow: string;
+  titleLine1: string;
+  titleLine2: string;
+  email: string;
+}
+
+export interface HeroProps {
+  name: string;
+  specialty: string;
+  summary: string;
+  email: string;
+  tagline: string;
+  label: string;
+  ctaText: string;
+  cvLink: string;
+  downloadCvText?: string;
+}
+
+export interface SiteContent {
+  hero: HeroProps;
+  ticker: TickerItem[];
+  projects: ProjectProps[];
+  about: AboutProps;
+  expertise: ExpertiseItem[];
+  experience: ExperienceProps[];
+  contact: ContactProps;
 }
